@@ -1,0 +1,55 @@
+
+[
+  {
+    "id": "1",
+    "title": "Modern CSS Techniques for Responsive Design",
+    "excerpt": "Explore the latest CSS features that make building responsive layouts easier than ever.",
+    "content": "## Introduction\n\nResponsive design is no longer optional in today's multi-device world. With the advent of new CSS features, creating flexible layouts has become more straightforward.\n\n### CSS Grid\n\nCSS Grid allows for two-dimensional layouts, making it easier to design complex responsive structures.\n\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n}\n```\n\n### Flexbox\n\nFlexbox is perfect for one-dimensional layouts. It excels in distributing space within an item and aligning content.\n\n```css\n.navbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n```\n\n### Media Queries\n\nMedia queries remain essential for applying styles based on device characteristics.\n\n```css\n@media (max-width: 600px) {\n  .sidebar {\n    display: none;\n  }\n}\n```\n\n## Conclusion\n\nBy leveraging CSS Grid, Flexbox, and media queries, developers can create responsive designs that adapt seamlessly to various screen sizes.",
+    "createdAt": "2025-03-15T10:30:00.000Z",
+    "imageUrl": "/upload/2.png",
+    "published": true,
+    "author": {
+      "name": "Alex Chen",
+      "role": "Lead Architect"
+    }
+  },
+  {
+    "id": "2",
+    "title": "Accessible UI Design: Beyond Color Contrast",
+    "excerpt": "Accessibility is more than just passing a Lighthouse audit. Here is how to build truly inclusive interfaces.",
+    "content": "## Designing for Everyone\n\nWeb accessibility (a11y) is often treated as a checklist item at the end of a project. However, true inclusivity starts at the design phase.\n\n### Semantic HTML is Key\n\nThe most powerful tool for accessibility is standard HTML. Using `<button>` instead of `<div onClick={...}>` gives you keyboard navigation and screen reader support for free.\n\n### ARIA Labels\n\nWhen visual design requires custom elements, ARIA labels bridge the gap.\n\n> \"The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.\" — Tim Berners-Lee\n\n### Focus Management\n\nEnsure that when a user opens a modal, their keyboard focus is trapped within that modal until they close it. This prevents 'ghost' tabbing behind the overlay.\n\n## Summary\n\nStart small, test with a keyboard, and use semantic HTML whenever possible.",
+    "createdAt": "2025-02-10T08:00:00.000Z",
+    "imageUrl": "/upload/3.png",
+    "published": true,
+    "author": {
+      "name": "Sarah Miller",
+      "role": "UX Researcher"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Optimizing Images for the Modern Web",
+    "excerpt": "Stop shipping 5MB hero images. Learn about WebP, AVIF, and the Next.js Image component.",
+    "content": "## The Heavy Cost of Images\n\nImages often account for the majority of a webpage's total weight. Unoptimized images lead to slow Largest Contentful Paint (LCP) scores and poor SEO rankings.\n\n### Formats Matter\n\n- **JPEG**: Good for photos, but dated.\n- **WebP**: Better compression, supported by most browsers.\n- **AVIF**: The new gold standard, offering superior compression at high quality.\n\n### Using `next/image`\n\nThe Next.js Image component handles lazy loading and resizing automatically.\n\n```jsx\nimport Image from 'next/image';\n\n<Image \n  src=\"/hero.png\" \n  width={800} \n  height={600} \n  alt=\"Hero Image\" \n  priority \n/>\n```\n\nUsing the `priority` prop on your LCP element tells the browser to load it immediately, preventing layout shift.",
+    "createdAt": "2025-01-21T14:45:00.000Z",
+    "imageUrl": "/upload/4.png",
+    "published": true,
+    "author": {
+      "name": "David Kim",
+      "role": "Performance Engineer"
+    }
+  },
+  {
+    "id": "4",
+    "title": "The Rise of Edge Computing",
+    "excerpt": "Why running code closer to the user is the next frontier in web application architecture.",
+    "content": "## What is the Edge?\n\nThe 'Edge' refers to servers located geographically closer to the user, rather than in a centralized data center (like us-east-1).\n\n### Benefits\n\n1. **Lower Latency**: Requests travel shorter distances.\n2. **Resilience**: If one node fails, others pick up the slack.\n3. **Personalization**: Execute logic based on user location instantly.\n\n### Middleware\n\nIn modern frameworks, Middleware runs on the edge. This allows you to perform authentication checks or A/B testing rewrites before the request even hits your main server logic.\n\n## Conclusion\n\nWhile not every app needs edge computing, for global applications, it provides a snappy experience that centralized servers cannot match.",
+    "createdAt": "2024-12-05T09:15:00.000Z",
+    "imageUrl": "/upload/5.png",
+    "published": false,
+    "author": {
+      "name": "GeezCode Team",
+      "role": "Editorial"
+    }
+  }
+]

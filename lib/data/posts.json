@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Introducing Our New Platform",
+    "excerpt": "We launched a refreshed experience to help you build faster.",
+    "createdAt": "2025-10-15T10:30:00.000Z",
+    "imageUrl": "/images/upload/1.png",
+    "author": { "name": "GeezCode Team" }
+  },
+  {
+    "id": "2",
+    "title": "Designing for Accessibility",
+    "excerpt": "Practical tips to make your web apps accessible to everyone.",
+    "createdAt": "2025-09-02T08:00:00.000Z",
+    "imageUrl": "/images/upload/2.png",
+    "author": { "name": "Aben" }
+  },
+  {
+    "id": "3",
+    "title": "Performance Optimizations in Next.js",
+    "excerpt": "Small changes that yield big speed improvements.",
+    "createdAt": "2025-07-21T14:45:00.000Z",
+    "imageUrl": "/images/upload/3.png",
+    "author": { "name": "DevOps" }
+  }
+]

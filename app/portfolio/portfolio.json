@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "title": "Onekoo Marketplace",
+    "description": "A scalable, high-performance multi-vendor e-commerce platform designed to connect local artisans with international markets.",
+    "imageUrl": "/upload/onekoo.png",
+    "createdAt": "2023-11-15T09:00:00Z",
+    "client": "Onekoo Retail Group",
+    "year": "2023",
+    "role": "Lead Full Stack Engineer",
+    "content": "Onekoo required a robust digital infrastructure to handle thousands of concurrent users during seasonal sales. The goal was to build a platform that not only facilitates transactions but also tells the story of the artisans.",
+    "development": "Built using a microservices architecture to ensure that the payment processing, inventory management, and user authentication services operate independently. We implemented Server-Side Rendering (SSR) for SEO optimization.",
+    "ui_ux_strategy": "Focused on a 'discovery-first' approach. We utilized large imagery and a minimalist interface to let the products stand out. The checkout flow was reduced to 3 steps to minimize cart abandonment.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Stripe API",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.onekoo-demo.com"
+  },
+  {
+    "id": "2",
+    "title": "OCFCU FinConnect",
+    "description": "A secure mobile financial application enabling cooperative members to manage savings, loans, and transfers on the go.",
+    "imageUrl": "/upload/ocfcu.png",
+    "createdAt": "2024-02-10T14:30:00Z",
+    "client": "Oromia Coffee Farmers Cooperative Union",
+    "year": "2024",
+    "role": "Mobile Application Developer",
+    "content": "The client needed a solution to bridge the gap between rural farmers and centralized banking systems. The app allows for real-time account monitoring and secure internal transfers within the cooperative network.",
+    "development": "Developed using React Native for cross-platform compatibility. We implemented biometric authentication (FaceID/Fingerprint) and end-to-end encryption for all transaction data to meet fintech security standards.",
+    "ui_ux_strategy": "Accessibility was the primary KPI. We designed high-contrast interfaces and large touch targets to accommodate users working in outdoor environments. Simplified navigation ensures usability for non-tech-savvy demographics.",
+    "technologies": [
+      "React Native",
+      "Redux",
+      "Firebase",
+      "Java (Android Native Modules)",
+      "RESTful API"
+    ],
+    "url": "https://play.google.com/store/apps/details?id=com.ocfcu.app"
+  },
+  {
+    "id": "3",
+    "title": "Apex Construction Portfolio",
+    "description": "A corporate web presence for a leading construction firm, featuring an interactive project gallery and service breakdown.",
+    "imageUrl": "/upload/const.png",
+    "createdAt": "2023-08-22T11:15:00Z",
+    "client": "Apex Build & Engineering",
+    "year": "2023",
+    "role": "Frontend Developer & UI Designer",
+    "content": "Apex needed to modernize their brand image. The previous site was static and difficult to update. The new solution serves as a dynamic brochure, showcasing their capabilities in high-rise and industrial construction.",
+    "development": "We utilized a Headless CMS approach to allow the marketing team to update project photos and news without touching code. The frontend is a static site generator for blazing-fast load speeds.",
+    "ui_ux_strategy": "The design communicates trust and stability. We used a grid-based layout to showcase architectural photography and implemented smooth parallax scrolling to add a sense of depth and modernism.",
+    "technologies": [
+      "Vue.js",
+      "Nuxt",
+      "Sanity CMS",
+      "GSAP (Animation)",
+      "Sass"
+    ],
+    "url": "https://www.apex-construct-demo.com"
+  }
+]
