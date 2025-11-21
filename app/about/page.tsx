@@ -41,8 +41,13 @@ const About = () => {
 
   const team = [
     {
+      name: "Suraphel Mengistu",
+      role: "Marketing Specialist",
+      expertise: "Digital Marketing",
+    },
+    {
       name: "Samuel Tekle",
-      role: "CTO",
+      role: "Marketing Specialist",
       expertise: "AI/ML",
     },
     {

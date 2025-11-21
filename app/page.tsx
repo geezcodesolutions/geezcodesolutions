@@ -8,7 +8,8 @@ import TestimonialCard from "./components/Testimonials";
 import Reveal from "./components/Reveal";
 // import BgComponent from "@/app/components/BgComponent";
 const Abeni = "/images/abeni.png";
-const Rediet = "/images/rediet.jpg";
+// const Rediet = "/images/rediet.jpg";
+const Biniam = "/images/biniam.jpg";
 
 const content = {
   home: {
@@ -31,10 +32,10 @@ export default function Home() {
       image: Abeni,
     },
     {
-      name: "Rediet Dadi",
+      name: "Biniam Amanuel",
       role: "COO & Co-Founder",
-      bio: "Experienced manager and psychology expert specializing in leadership, team dynamics, and workplace performance.",
-      image: Rediet,
+      bio: "Front-end developer crafting digital experiences with code. specialize in the React ecosystem and have a keen eye for UI/UX. Let's build something amazing.",
+      image: Biniam,
     },
   ];
 
