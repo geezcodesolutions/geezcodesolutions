@@ -110,5 +110,29 @@
       "Firebase Notifications"
     ],
     "url": "https://www.orthodoxprayerapp.com"
+  },
+  {
+    "id": "7",
+    "title": "Hayes Addis Hotel Hospitality Website",
+    "description": "A visually appealing website for Hayes Addis Hotel, showcasing rooms, amenities, booking options, and local attractions to enhance guest experience.",
+    "imageUrl": "/upload/hayes.png",
+    "createdAt": "2024-10-05T18:00:00Z",
+    "client": "Hayes Addis Hotel",
+    "year": "2024",
+    "role": "Web Developer & UX Designer, SEO Specialist and OTA Integration",
+    "content": "The website showcases rooms, amenities, booking options, and local attractions to enhance guest experience.",
+    "development": "Implemented an easy-to-navigate booking system integrated with popular OTAs, dynamic room displays, and a blog for local attractions. Focused on SEO optimization for increased visibility.",
+    "ui_ux_strategy": "Designed a user-friendly interface with high-quality visuals, intuitive navigation, and clear calls to action to drive bookings.",
+    "technologies": [
+      "Next.js",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Booking API Integration",
+      "SEO Optimization",
+      "OTA Integration"
+    ],
+    "url": "https://hayesaddishotel.com/"
   }
 ]
