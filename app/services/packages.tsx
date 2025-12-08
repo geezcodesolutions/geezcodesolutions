@@ -1,175 +1,273 @@
 import React, { useState } from "react";
-import { Check, Star, Shield, Zap, ArrowRight } from "lucide-react";
+import {
+  Check,
+  Star,
+  ArrowRight,
+  Smartphone,
+  Globe,
+  Server,
+  Database,
+  Layout,
+  Code,
+} from "lucide-react";
 
-// Mock Data to make the component self-contained and renderable
-const MOCK_PRODUCTS = [
-  {
-    id: 1,
-    name: "Starter Kit",
-    description:
-      "Essential tools for small businesses and freelancers getting started.",
-    price: 29,
-    image:
-      "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=600",
-    features: ["Basic Analytics", "5 Projects", "Email Support", "1GB Storage"],
-    popular: false,
-  },
-  {
-    id: 2,
-    name: "Professional",
-    description:
-      "Advanced features for growing teams that need more power and flexibility.",
-    price: 59,
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
-    features: [
-      "Advanced Analytics",
-      "Unlimited Projects",
-      "Priority Support",
-      "10GB Storage",
-      "Team Collaboration",
+// Data Structure tailored for Ethiopian Tech Market
+const PACKAGES_DATA = {
+  mobile: {
+    title: "Mobile App Development",
+    subtitle: "Native & Cross-platform solutions for Android & iOS",
+    icon: <Smartphone className="w-6 h-6" />,
+    tiers: [
+      {
+        id: "mobile-std",
+        name: "Standard Package",
+        idealFor: "Startups, MVP launches, Small Teams",
+        priceRange: "50,000 – 120,000",
+        currency: "ETB",
+        features: [
+          "Cross-platform (Flutter/React Native)",
+          "Android & iOS Support",
+          "Up to 6 Essential Screens",
+          "Standard Auth (Email/Phone)",
+          "Basic Admin Dashboard",
+          "Push Notifications",
+          "Play Store Publishing Support",
+        ],
+        highlight: false,
+        delivery: "4-6 Weeks",
+      },
+      {
+        id: "mobile-prem",
+        name: "Premium Package",
+        idealFor: "Fintech, Delivery, Marketplaces",
+        priceRange: "150,000 – 350,000+",
+        currency: "ETB",
+        features: [
+          "Fully Customized UI/UX Design",
+          "20+ Screens & Complex Flows",
+          "Telebirr & Payment Integration",
+          "Real-time Tracking / Maps / Chat",
+          "Role-based Admin Dashboard",
+          "Offline Support & Analytics",
+          "iOS App Store + Play Store",
+          "3 Months Maintenance",
+        ],
+        highlight: true,
+        delivery: "8-12 Weeks",
+      },
     ],
-    popular: true, // Highlights this card
   },
-  {
-    id: 3,
-    name: "Enterprise",
-    description:
-      "Full-scale solutions for large organizations requiring maximum security.",
-    price: 129,
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600",
-    features: [
-      "Custom Reporting",
-      "Unlimited Everything",
-      "24/7 Dedicated Support",
-      "SSO & Security",
-      "API Access",
+  website: {
+    title: "Website Development",
+    subtitle: "Responsive, SEO-ready web presence",
+    icon: <Globe className="w-6 h-6" />,
+    tiers: [
+      {
+        id: "web-std",
+        name: "Standard Package",
+        idealFor: "Restaurants, NGOs, SMEs",
+        priceRange: "20,000 – 60,000",
+        currency: "ETB",
+        features: [
+          "5–7 Pages (Home, About, Services)",
+          "Responsive Mobile/Desktop Design",
+          "Contact Form & Social Links",
+          "Basic Animations",
+          "SEO-Ready Structure",
+          "OTA Setup and Management",
+          "Free Hosting Setup",
+          "Basic CMS (Admin Panel)",
+        ],
+        highlight: false,
+        delivery: "2-3 Weeks",
+      },
+      {
+        id: "web-prem",
+        name: "Premium Package",
+        idealFor: "Enterprises, eCommerce, Hotels",
+        priceRange: "80,000 – 200,000+",
+        currency: "ETB",
+        features: [
+          "Unlimited Pages & Custom UI/UX",
+          "High-end Animations (Three.js/Lottie)",
+          "Multi-language (English + Amharic/Others)",
+          "Full Headless CMS (Strapi)",
+          "E-commerce / Booking Systems",
+          "Newsletter & Blog Automation",
+          "Advanced Security & Speed Opt.",
+          "3 Months Support",
+        ],
+        highlight: true,
+        delivery: "4-8 Weeks",
+      },
     ],
-    popular: false,
   },
-];
+  systems: {
+    title: "System Development",
+    subtitle: "Enterprise backends, ERPs, and Internal Tools",
+    icon: <Server className="w-6 h-6" />,
+    tiers: [
+      {
+        id: "sys-std",
+        name: "Standard System",
+        idealFor: "Inventory, HR, POS, Data Tracking",
+        priceRange: "80,000 – 200,000",
+        currency: "ETB",
+        features: [
+          "Python/Java/Node Architecture",
+          "Core Business Logic Automation",
+          "User Authentication & Roles",
+          "PostgreSQL/MySQL Database",
+          "Basic Reporting Dashboard",
+          "Local Network Deployment",
+          "Training & Documentation",
+        ],
+        highlight: false,
+        delivery: "6-8 Weeks",
+      },
+      {
+        id: "sys-prem",
+        name: "Premium System",
+        idealFor: "Govt, Fintech, Large Organizations",
+        priceRange: "250,000 – 600,000+",
+        currency: "ETB",
+        features: [
+          "Full Enterprise Architecture",
+          "Cloud-Ready & Scalable Backend",
+          "Advanced Analytics & BI",
+          "API Integration & Multi-branch",
+          "Bank-grade Security & Encryption",
+          "Automated Backups & SLA",
+          "Long-term Maintenance",
+          "Full Technical Manuals",
+        ],
+        highlight: true,
+        delivery: "3-6 Months",
+      },
+    ],
+  },
+};
 
 const ProductPackages = () => {
-  const [isYearly, setIsYearly] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("mobile");
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans py-16 px-4 sm:px-6 lg:px-8">
       {/* Header Section */}
-      <div className="max-w-7xl mx-auto text-center mb-16">
+      <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-base font-semibold text-amber-600 tracking-wide uppercase mb-2">
           Pricing & Plans
         </h2>
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-          Choose the perfect package <br className="hidden md:block" /> for your
-          growth.
+          Choose the perfect package <br className="hidden md:block" />
+          for your growth.
         </h1>
         <p className="max-w-2xl mx-auto text-xl text-slate-600 mb-10">
           Transparent pricing. No hidden fees. Upgrade or cancel anytime.
         </p>
 
-        {/* Billing Toggle */}
-        <div className="flex justify-center items-center space-x-4">
-          <span
-            className={`text-sm font-medium ${
-              !isYearly ? "text-slate-900" : "text-slate-500"
-            }`}
-          >
-            Monthly
-          </span>
-          <button
-            onClick={() => setIsYearly(!isYearly)}
-            className="relative rounded-full w-14 h-8 transition-colors duration-300 focus:outline-none bg-slate-200 hover:bg-slate-300"
-          >
-            <div
-              className={`absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-md transform transition-transform duration-300 ${
-                isYearly ? "translate-x-6 bg-amber-500" : ""
-              }`}
-            />
-          </button>
-          <span
-            className={`text-sm font-medium ${
-              isYearly ? "text-slate-900" : "text-slate-500"
-            }`}
-          >
-            Yearly{" "}
-            <span className="text-amber-600 text-xs font-bold ml-1">
-              (Save 20%)
-            </span>
-          </span>
+        {/* Category Tabs */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {Object.entries(PACKAGES_DATA).map(([key, data]) => (
+            <button
+              key={key}
+              onClick={() => setActiveCategory(key)}
+              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 text-sm md:text-base
+                ${
+                  activeCategory === key
+                    ? "bg-slate-900 text-white shadow-lg scale-105"
+                    : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
+                }
+              `}
+            >
+              {data.icon}
+              {data.title}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Grid Section */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-        {MOCK_PRODUCTS.map((product) => (
-          <div
-            key={product.id}
-            className={`relative flex flex-col bg-white rounded-2xl transition-all duration-300 hover:-translate-y-2
-              ${
-                product.popular
-                  ? "shadow-2xl ring-2 ring-amber-400 scale-105 z-10"
-                  : "shadow-xl border border-slate-100 hover:shadow-2xl"
-              }
-            `}
-          >
-            {/* Popular Badge */}
-            {product.popular && (
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg flex items-center gap-1 uppercase tracking-wider">
-                <Star size={12} fill="currentColor" /> Most Popular
+      {/* Content Section */}
+      <div className="max-w-6xl mx-auto">
+        {/* Category Description */}
+        <div className="text-center mb-10 animate-fade-in">
+          <h3 className="text-2xl font-bold text-slate-800">
+            {PACKAGES_DATA[activeCategory].title}
+          </h3>
+          <p className="text-slate-500 mt-2">
+            {PACKAGES_DATA[activeCategory].subtitle}
+          </p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
+          {PACKAGES_DATA[activeCategory].tiers.map((tier) => (
+            <div
+              key={tier.id}
+              className={`relative flex flex-col bg-white rounded-2xl transition-all duration-300
+                ${
+                  tier.highlight
+                    ? "shadow-2xl ring-2 ring-amber-400 md:-mt-4 z-10"
+                    : "shadow-lg border border-slate-100 hover:shadow-xl"
+                }
+              `}
+            >
+              {/* Top Badge for Premium */}
+              {tier.highlight && (
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1 uppercase tracking-wider whitespace-nowrap">
+                  <Star size={12} fill="currentColor" /> Recommended for Scale
+                </div>
+              )}
+
+              {/* Card Header */}
+              <div className={`p-8 pb-0 ${tier.highlight ? "pt-10" : "pt-8"}`}>
+                <h3 className="text-2xl font-bold text-slate-900">
+                  {tier.name}
+                </h3>
+                <div className="flex items-center gap-2 mt-2">
+                  <div className="h-1 w-10 bg-amber-500 rounded-full"></div>
+                  <p className="text-slate-500 text-sm font-medium">
+                    {tier.idealFor}
+                  </p>
+                </div>
               </div>
-            )}
 
-            {/* Image Header */}
-            <div className="relative h-48 overflow-hidden rounded-t-2xl">
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10" />
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute bottom-4 left-6 z-20">
-                <h3 className="text-xl font-bold text-white">{product.name}</h3>
-              </div>
-            </div>
-
-            {/* Card Content */}
-            <div className="p-8 flex-1 flex flex-col">
-              <p className="text-slate-500 text-sm mb-6 leading-relaxed h-10">
-                {product.description}
-              </p>
-
-              {/* Price */}
-              <div className="mb-8">
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-extrabold text-slate-900">
-                    $
-                    {isYearly ? Math.floor(product.price * 0.8) : product.price}
+              {/* Pricing Section */}
+              <div className="p-8 py-6">
+                <div className="flex items-baseline flex-wrap gap-2">
+                  <span className="text-3xl lg:text-4xl font-extrabold text-slate-900">
+                    {tier.priceRange}
                   </span>
-                  <span className="text-slate-500 font-medium ml-2">
-                    / {isYearly ? "year" : "month"}
+                  <span className="text-slate-500 font-bold">
+                    {tier.currency}
                   </span>
                 </div>
-                {isYearly && (
-                  <p className="text-xs text-green-600 mt-1 font-medium">
-                    Billed ${Math.floor(product.price * 0.8) * 12} yearly
-                  </p>
-                )}
+                <p className="text-xs text-slate-400 mt-2 font-medium uppercase tracking-wide">
+                  Project Based • Est. Time: {tier.delivery}
+                </p>
               </div>
 
-              {/* Features */}
-              <div className="flex-1 mb-8">
+              {/* Divider */}
+              <div className="w-full h-px bg-slate-100"></div>
+
+              {/* Features List */}
+              <div className="p-8 flex-1">
                 <ul className="space-y-4">
-                  {product.features.map((feature, index) => (
+                  {tier.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-50 flex items-center justify-center mt-0.5">
+                      <div
+                        className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5 
+                        ${tier.highlight ? "bg-amber-100" : "bg-slate-100"}`}
+                      >
                         <Check
                           size={14}
-                          className="text-amber-600"
+                          className={
+                            tier.highlight ? "text-amber-600" : "text-slate-600"
+                          }
                           strokeWidth={3}
                         />
                       </div>
-                      <span className="ml-3 text-slate-600 text-sm font-medium">
+                      <span className="ml-3 text-slate-600 text-sm font-medium leading-6">
                         {feature}
                       </span>
                     </li>
@@ -177,50 +275,43 @@ const ProductPackages = () => {
                 </ul>
               </div>
 
-              {/* CTA Button */}
-              <button
-                className={`w-full py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 group
-                  ${
-                    product.popular
-                      ? "bg-slate-900 text-white hover:bg-slate-800 shadow-lg hover:shadow-xl"
-                      : "bg-amber-100 text-amber-900 hover:bg-amber-200"
-                  }
-                `}
-              >
-                Get Started
-                <ArrowRight
-                  size={18}
-                  className="transform group-hover:translate-x-1 transition-transform"
-                />
-              </button>
+              {/* Action Button */}
+              <div className="p-8 pt-0">
+                <button
+                  className={`w-full py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 group
+                    ${
+                      tier.highlight
+                        ? "bg-slate-900 text-white hover:bg-slate-800 shadow-lg hover:shadow-xl"
+                        : "bg-amber-50 text-amber-900 hover:bg-amber-100 border border-amber-100"
+                    }
+                  `}
+                >
+                  Request Proposal
+                  <ArrowRight
+                    size={18}
+                    className="transform group-hover:translate-x-1 transition-transform"
+                  />
+                </button>
+              </div>
             </div>
-
-            {/* Decorative bottom bar for premium feel */}
-            <div
-              className={`h-1.5 w-full ${
-                product.popular ? "bg-amber-500" : "bg-slate-200"
-              }`}
-            />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Trust Indicators */}
+      {/* Trust/Footer Section */}
       <div className="mt-20 text-center border-t border-slate-200 pt-10 max-w-4xl mx-auto">
         <p className="text-sm text-slate-500 font-medium uppercase tracking-widest mb-6">
-          Trusted by industry leaders
+          Supporting Businesses Across Ethiopia
         </p>
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
-          {/* Simple text placeholders for logos to keep it simple */}
-          <span className="text-xl font-bold font-serif text-slate-400">
-            ACME Corp
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 opacity-60">
+          <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-600">
+            Telebirr Integration
           </span>
-          <span className="text-xl font-bold text-slate-400">GlobalBank</span>
-          <span className="text-xl font-bold italic text-slate-400">
-            Starlight
+          <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-600">
+            Multi Language Support
           </span>
-          <span className="text-xl font-bold font-mono text-slate-400">
-            NextGen
+          <span className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-600">
+            Local Hosting
           </span>
         </div>
       </div>

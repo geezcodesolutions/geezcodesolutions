@@ -7,7 +7,7 @@ import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import BgComponent from "@/app/components/BgComponent";
 
 const containerStyle = { width: "100%", height: "100%" };
-const center = { lat: 9.0108, lng: 38.7613 };
+const center = { lat: 8.998725581975584, lng: 38.786995177708754 };
 
 type FormData = { name: string; email: string; message: string };
 

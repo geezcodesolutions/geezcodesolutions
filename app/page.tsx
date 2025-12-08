@@ -6,7 +6,7 @@ import ServiceCard from "./components/ServiceCard";
 import FounderCard from "./components/FounderCard";
 import TestimonialCard from "./components/Testimonials";
 import Reveal from "./components/Reveal";
-// import BgComponent from "@/app/components/BgComponent";
+import BgComponent from "@/app/components/BgComponent";
 const Abeni = "/images/abeni.png";
 // const Rediet = "/images/rediet.jpg";
 const Biniam = "/images/biniam.jpg";
@@ -34,7 +34,7 @@ export default function Home() {
     {
       name: "Biniam Amanuel",
       role: "COO & Co-Founder",
-      bio: "Front-end developer crafting digital experiences with code. specialize in the React ecosystem and have a keen eye for UI/UX. Let's build something amazing.",
+      bio: "Front-end developer crafting digital experiences with code. specialize in the React ecosystem and have a keen eye for UI/UX.",
       image: Biniam,
     },
   ];
@@ -55,9 +55,9 @@ export default function Home() {
 
   return (
     <div className="pointer-events-auto">
-      {/* <div className="absolute inset-0 -z-10 w-full h-full">
+      <div className="absolute inset-0 -z-10 w-full h-full">
         <BgComponent />
-      </div> */}
+      </div>
       <Hero />
       <Reveal delay={0.3}>
         <div className="relative min-h-scree rounded-xl mt-5 text-primary px-4 md:px-12 py-24 space-y-16 overflow-hidden">
@@ -67,7 +67,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-7xl mx-auto"
           >
-            <h1 className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 md:text-6xl font-bold mb-4">
+            <h1 className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 md:text-6xl py-5 font-bold mb-4">
               {t.title.en}
             </h1>
             <p className="text-lg text-shadow-blue-950 dark:text-amber-50 md:text-xl mb-8">

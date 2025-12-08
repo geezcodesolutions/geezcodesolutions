@@ -17,26 +17,26 @@ import BgComponent from "@/app/components/BgComponent";
 const mockVacancies = [
   {
     id: "1",
-    title: "Senior Frontend Developer",
-    position: "Frontend Developer",
-    qualification: "Bachelors in Computer Science or related field",
-    experience: "3+ years of experience with React and TypeScript",
+    title: "Sales Person",
+    position: "Sales Person",
+    qualification: "Bachelor's degree in Business or related field",
+    experience: "3+ years of experience in sales or related field",
     description:
-      "We are looking for a skilled Frontend Developer to join our team...\n- Develop new user-facing features\n- Build reusable code and libraries for future use\n- Ensure the technical feasibility of UI/UX designs",
+      "We are looking for a skilled Sales Person to join our team...\n- Identify and develop new business opportunities\n- Build and maintain strong relationships with clients\n- Meet and exceed sales targets",
     deadline: new Date(new Date().setDate(new Date().getDate() + 30)),
     createdAt: new Date(),
   },
-  {
-    id: "2",
-    title: "Product Manager",
-    position: "Product Manager",
-    qualification: "Degree in Business, Marketing, or a technical field",
-    experience: "5+ years in product management, preferably in a SaaS company",
-    description:
-      "As a Product Manager, you will be responsible for the product planning and execution throughout the Product Lifecycle...\n- Define the product vision, roadmap and growth opportunities\n- Work closely with engineering, sales, marketing, and support teams",
-    deadline: new Date(new Date().setDate(new Date().getDate() + 45)),
-    createdAt: new Date(),
-  },
+  // {
+  //   id: "2",
+  //   title: "Product Manager",
+  //   position: "Product Manager",
+  //   qualification: "Degree in Business, Marketing, or a technical field",
+  //   experience: "5+ years in product management, preferably in a SaaS company",
+  //   description:
+  //     "As a Product Manager, you will be responsible for the product planning and execution throughout the Product Lifecycle...\n- Define the product vision, roadmap and growth opportunities\n- Work closely with engineering, sales, marketing, and support teams",
+  //   deadline: new Date(new Date().setDate(new Date().getDate() + 45)),
+  //   createdAt: new Date(),
+  // },
 ];
 
 type Vacancy = {

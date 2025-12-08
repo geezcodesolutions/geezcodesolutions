@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-const logo = "/images/logo_white-1.png"; // Update with your logo path
+const logo = "/images/black.png"; // Update with your logo path
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -13,10 +13,10 @@ const navItems = [
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Blogs", href: "/posts" },
-  { name: "Downloads", href: "/products" },
+  // { name: "Downloads", href: "/products" },
   { name: "Contact Us", href: "/contact" },
-  { name: "Careers", href: "/careers" },
-  { name: "FAQs", href: "/faqs" },
+  // { name: "Careers", href: "/careers" },
+  // { name: "FAQs", href: "/faqs" },
 ];
 
 export default function Navbar() {
@@ -33,7 +33,7 @@ export default function Navbar() {
             alt="Logo"
             className="w-auto"
             height={10}
-            width={259}
+            width={50}
           />
         </Link>
         {/* </div> */}

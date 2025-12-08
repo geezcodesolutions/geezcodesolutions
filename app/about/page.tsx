@@ -42,35 +42,30 @@ const About = () => {
   const team = [
     {
       name: "Suraphel Mengistu",
-      role: "Marketing Specialist",
-      expertise: "Digital Marketing",
+      role: "Marketing Manager",
+      expertise: "Marketing",
     },
     {
-      name: "Samuel Tekle",
-      role: "Marketing Specialist",
-      expertise: "AI/ML",
-    },
-    {
-      name: "Amina Mohammed",
-      role: "Lead Designer",
-      expertise: "UI/UX",
+      name: "Yohannes Tilaye",
+      role: "Sales Person",
+      expertise: "Marketing",
     },
   ];
 
-  const testimonials = [
-    {
-      quote:
-        "GeezCode transformed our logistics platform with incredible efficiency gains.",
-      author: "Daniel Yohannes, Safi Trucking",
-    },
-  ];
+  // const testimonials = [
+  //   {
+  //     quote:
+  //       "GeezCode transformed our logistics platform with incredible efficiency gains.",
+  //     author: "Daniel Yohannes, Safi Trucking",
+  //   },
+  // ];
 
   return (
     <div className="relative min-h-screen pointer-events-auto bg-opacity-80 backdrop-blur-sm rounded-xl mt-5 text-primary px-4 md:px-12 py-24 space-y-16 overflow-hidden">
       {/* Interactive Background */}
-      {/* <div className="absolute inset-0 -z-10 w-full h-full">
+      <div className="absolute inset-0 -z-10 w-full h-full">
         <BgComponent />
-      </div> */}
+      </div>
       {/* Animated Background Shapes */}
       <motion.div
         className="absolute top-20 left-10 w-10 h-10 bg-amber-400 rounded-lg"
@@ -179,7 +174,7 @@ const About = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-amber-400/10 dark:bg-gold/20 rounded-xl p-8 max-w-4xl mx-auto mb-20"
+        className="bg-amber-400/80 dark:bg-gold/20 rounded-xl p-8 max-w-4xl mx-auto mb-20"
       >
         <div className="grid grid-cols-3 gap-4 text-center">
           {t.stats.map((stat, index) => (
@@ -213,7 +208,7 @@ const About = () => {
       </motion.section>
 
       {/* Testimonials */}
-      <motion.section
+      {/* <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -233,7 +228,7 @@ const About = () => {
             />
           ))}
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* Final CTA */}
       <motion.div

@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 
 const quickLinks = [
-  { name: "Downloads", path: "/products" },
+  // { name: "Downloads", path: "/products" },
   { name: "Careers", path: "/careers" },
   { name: "Services", path: "/services" },
   { name: "FAQs", path: "/faqs" },
@@ -94,12 +94,20 @@ const Footer = () => {
               </li>
               <li>
                 <a
+                  href="mailto:geezcodesolutions@gmail.com"
+                  className="flex items-center gap-2 hover:text-yellow-400"
+                >
+                  <FaEnvelope /> geezcodesolutions@gmail.com
+                </a>
+              </li>
+              {/* <li>
+                <a
                   href="https://www.geezcodesolutions.com"
                   className="flex items-center gap-2 hover:text-yellow-400"
                 >
                   <FaGlobe /> www.geezcodesolutions.com
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="tel:+251799160326"
@@ -114,6 +122,14 @@ const Footer = () => {
                   className="flex items-center gap-2 hover:text-yellow-400"
                 >
                   <FaPhoneAlt /> +251 954 196 049
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+251946304619"
+                  className="flex items-center gap-2 hover:text-yellow-400"
+                >
+                  <FaPhoneAlt /> +251 946 304 619
                 </a>
               </li>
             </ul>
@@ -178,9 +194,9 @@ const Footer = () => {
           <p className="mb-0 text-xs text-gray-400">
             © {new Date().getFullYear()} Geez Code Solutions. All rights
             reserved.
-            <span className="block text-gray-500">
+            {/* <span className="block text-gray-500">
               Registered in England & Wales No. 12345678
-            </span>
+            </span> */}
           </p>
         </div>
       </div>
