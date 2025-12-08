@@ -2,7 +2,7 @@
 import { useState, FC } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
-import BgComponent from "@/app/components/BgComponent";
+// import BgComponent from "@/app/components/BgComponent";
 
 // Define the type for a single FAQ item
 interface FaqItemData {

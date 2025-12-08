@@ -11,7 +11,7 @@ import {
   Quote,
   ChevronRight,
 } from "lucide-react";
-import BgComponent from "@/app/components/BgComponent";
+// import BgComponent from "@/app/components/BgComponent";
 
 const About = () => {
   const t = {
@@ -61,11 +61,12 @@ const About = () => {
   // ];
 
   return (
-    <div className="relative min-h-screen pointer-events-auto bg-opacity-80 backdrop-blur-sm rounded-xl mt-5 text-primary px-4 md:px-12 py-24 space-y-16 overflow-hidden">
+    // <div className="relative min-h-screen pointer-events-auto bg-opacity-80 backdrop-blur-sm rounded-xl mt-5 text-primary px-4 md:px-12 py-24 space-y-16 overflow-hidden">
+    <div className="pointer-events-auto">
       {/* Interactive Background */}
-      <div className="absolute inset-0 -z-10 w-full h-full">
+      {/* <div className="absolute inset-0 -z-10 w-full h-full">
         <BgComponent />
-      </div>
+      </div> */}
       {/* Animated Background Shapes */}
       <motion.div
         className="absolute top-20 left-10 w-10 h-10 bg-amber-400 rounded-lg"

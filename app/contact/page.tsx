@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState, ChangeEvent, FormEvent } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
-import BgComponent from "@/app/components/BgComponent";
+// import BgComponent from "@/app/components/BgComponent";
 
 const containerStyle = { width: "100%", height: "100%" };
 const center = { lat: 8.998725581975584, lng: 38.786995177708754 };

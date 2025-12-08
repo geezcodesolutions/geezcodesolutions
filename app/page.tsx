@@ -6,7 +6,7 @@ import ServiceCard from "./components/ServiceCard";
 import FounderCard from "./components/FounderCard";
 import TestimonialCard from "./components/Testimonials";
 import Reveal from "./components/Reveal";
-import BgComponent from "@/app/components/BgComponent";
+// import BgComponent from "@/app/components/BgComponent";
 const Abeni = "/images/abeni.png";
 // const Rediet = "/images/rediet.jpg";
 const Biniam = "/images/biniam.jpg";
@@ -55,9 +55,9 @@ export default function Home() {
 
   return (
     <div className="pointer-events-auto">
-      <div className="absolute inset-0 -z-10 w-full h-full">
+      {/* <div className="absolute inset-0 -z-10 w-full h-full">
         <BgComponent />
-      </div>
+      </div> */}
       <Hero />
       <Reveal delay={0.3}>
         <div className="relative min-h-scree rounded-xl mt-5 text-primary px-4 md:px-12 py-24 space-y-16 overflow-hidden">

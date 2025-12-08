@@ -11,7 +11,7 @@ import {
   Phone,
   FileText,
 } from "lucide-react";
-import BgComponent from "@/app/components/BgComponent";
+// import BgComponent from "@/app/components/BgComponent";
 
 // --- MOCK DATA ---
 const mockVacancies = [
@@ -384,9 +384,9 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({
           onClick={onClose}
           style={{ backdropFilter: "blur(10px)" }}
         >
-          <div className="absolute inset-0 -z-10 w-full h-full">
+          {/* <div className="absolute inset-0 -z-10 w-full h-full">
             <BgComponent />
-          </div>
+          </div> */}
           <motion.div
             className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
             initial={{ y: 50, opacity: 0 }}
