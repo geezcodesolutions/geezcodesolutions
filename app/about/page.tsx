@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Users,
   Target,
@@ -11,6 +10,7 @@ import {
   Quote,
   ChevronRight,
 } from "lucide-react";
+import { motion } from "framer-motion";
 // import BgComponent from "@/app/components/BgComponent";
 
 const About = () => {
@@ -46,45 +46,20 @@ const About = () => {
       expertise: "Marketing",
     },
     {
-      name: "Yohannes Tilaye",
-      role: "Sales Person",
-      expertise: "Marketing",
+      name: "Abenezer Dadi",
+      role: "Tech Lead",
+      expertise: "Development",
     },
   ];
 
-  // const testimonials = [
-  //   {
-  //     quote:
-  //       "GeezCode transformed our logistics platform with incredible efficiency gains.",
-  //     author: "Daniel Yohannes, Safi Trucking",
-  //   },
-  // ];
-
   return (
     // <div className="relative min-h-screen pointer-events-auto bg-opacity-80 backdrop-blur-sm rounded-xl mt-5 text-primary px-4 md:px-12 py-24 space-y-16 overflow-hidden">
-    <div className="pointer-events-auto">
-      {/* Interactive Background */}
-      {/* <div className="absolute inset-0 -z-10 w-full h-full">
-        <BgComponent />
-      </div> */}
-      {/* Animated Background Shapes */}
-      <motion.div
-        className="absolute top-20 left-10 w-10 h-10 bg-amber-400 rounded-lg"
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      <motion.svg
-        viewBox="0 0 100 100"
-        className="absolute top-60 right-12 w-8 h-8 fill-amber-400"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-      >
-        <polygon points="50,15 100,100 0,100" />
-      </motion.svg>
-
+    <div className="pointer-events-auto pt-16">
       <motion.div
         className="absolute bottom-20 left-[40%] w-5 h-5 bg-yellow-500 rotate-45"
+        style={{
+          filter: "drop-shadow(0 0 8px rgba(251, 191, 36, 0.8))",
+        }}
         animate={{ y: [0, 20, 0] }}
         transition={{ duration: 3, repeat: Infinity }}
       />
@@ -96,10 +71,10 @@ const About = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-20"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 mb-2">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-amber-600 to-amber-900 mb-2">
           {t.title}
         </h1>
-        <p className="text-lg text-blue-950 dark:text-amber-50 mb-8">
+        <p className="text-lg text-blue-950 dark:text-amber-100 mb-8">
           {t.subtitle}
         </p>
         <motion.div
@@ -108,7 +83,7 @@ const About = () => {
           className="inline-block"
         >
           <button
-            className="bg-amber-400 text-blue-950 hover:text-white hover:bg-yellow-600 px-6 py-3 rounded-lg font-medium flex items-center gap-2"
+            className="bg-amber-400 text-blue-950 hover:text-amber-100 hover:bg-yellow-600 px-6 py-3 rounded-lg font-medium flex items-center gap-2"
             onClick={() => (window.location.href = "/contact")}
           >
             {t.startProject}
@@ -151,19 +126,21 @@ const About = () => {
         viewport={{ once: true }}
         className="mb-20"
       >
-        <h2 className="text-2xl font-bold text-center mb-8">{t.services}</h2>
+        <h2 className="text-2xl font-bold text-center text-blue-950 dark:text-amber-100 mb-8">
+          {t.services}
+        </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {t.servicesList.map((service, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="bg-amber-100 dark:bg-gray-800 p-4 rounded-lg shadow-sm text-center"
+              className="bg-amber-100 dark:bg-blue-950 p-4 rounded-lg shadow-sm text-center"
             >
               <div className="flex justify-center text-amber-400 mb-2">
                 <Code size={24} />
               </div>
-              <p className="text-sm text-blue-950 dark:text-amber-50">
-                {service}
+              <p className="text-sm text-blue-950 dark:text-amber-100">
+                {service}amber-100"
               </p>
             </motion.div>
           ))}
@@ -175,13 +152,15 @@ const About = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-amber-400/80 dark:bg-gold/20 rounded-xl p-8 max-w-4xl mx-auto mb-20"
+        className="bg-amber-100 dark:bg-blue-950 rounded-xl p-8 max-w-4xl mx-auto mb-20"
       >
         <div className="grid grid-cols-3 gap-4 text-center">
           {t.stats.map((stat, index) => (
             <div key={index}>
-              <p className="text-3xl font-bold text-gold">{stat.value}</p>
-              <p className="text-sm">{stat.label}</p>
+              <p className="text-3xl font-bold text-amber-400">{stat.value}</p>
+              <p className="text-sm text-blue-950 dark:text-amber-100">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>
@@ -194,7 +173,9 @@ const About = () => {
         viewport={{ once: true }}
         className="mb-20"
       >
-        <h2 className="text-2xl font-bold text-center mb-8">{t.teamTitle}</h2>
+        <h2 className="text-2xl font-bold text-center mb-8 text-blue-950 dark:text-amber-100">
+          {t.teamTitle}
+        </h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {team.map((member, index) => (
             <TeamMember
@@ -207,29 +188,6 @@ const About = () => {
           ))}
         </div>
       </motion.section>
-
-      {/* Testimonials */}
-      {/* <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="bg-amber-400/10 dark:bg-blue-950/90 rounded-2xl p-8 max-w-4xl mx-auto mb-20"
-      >
-        <h2 className="text-2xl font-bold text-center mb-8 flex items-center justify-center gap-2">
-          <Quote className="text-gold rotate-180" />
-          {t.testimonials}
-          <Quote className="text-gold" />
-        </h2>
-        <div className="space-y-6">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={index}
-              quote={testimonial.quote}
-              author={testimonial.author}
-            />
-          ))}
-        </div>
-      </motion.section> */}
 
       {/* Final CTA */}
       <motion.div
@@ -265,15 +223,15 @@ const ValueCard = ({ icon, title, text, delay = 0 }: ValueCardProps) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true, margin: "-50px" }}
-    className="bg-amber-100 dark:bg-gray-800 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700"
+    className="bg-amber-100 dark:bg-blue-950 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700"
   >
     <div className="flex justify-center text-amber-400 mb-4 text-3xl">
       {icon}
     </div>
-    <h3 className="text-xl font-semibold mb-3 text-center text-blue-950 dark:text-amber-50">
+    <h3 className="text-xl font-semibold mb-3 text-center text-blue-950 dark:text-amber-100">
       {title}
     </h3>
-    <p className="text-center text-blue-950 dark:text-amber-50 ">{text}</p>
+    <p className="text-center text-blue-950 dark:text-amber-100 ">{text}</p>
   </motion.div>
 );
 
@@ -291,15 +249,15 @@ const TeamMember = ({ name, role, expertise, delay = 0 }: TeamMemberProps) => (
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true }}
-    className="flex items-center gap-6 bg-amber-100 dark:bg-gray-800 p-6 rounded-xl shadow-sm"
+    className="flex items-center gap-6 bg-amber-100 dark:bg-blue-950 p-6 rounded-xl shadow-sm"
   >
-    <div className="w-16 h-16 text-amber-400 rounded-full bg-amber-400/30 flex items-center justify-center text-gold text-xl font-bold">
+    <div className="w-16 h-16 text-blue-950 dark:text-amber-400 rounded-full bg-amber-400/30 flex items-center justify-center text-gold text-xl font-bold">
       {name.charAt(0)}
     </div>
     <div>
-      <h3 className="font-bold text-blue-950 dark:text-amber-50">{name}</h3>
-      <p className="text-sm text-blue-950 dark:text-amber-50">{role}</p>
-      <p className="text-xs text-blue-950 dark:text-amber-50 mt-1">
+      <h3 className="font-bold text-blue-950 dark:text-amber-100">{name}</h3>
+      <p className="text-sm text-blue-950 dark:text-amber-100">{role}</p>
+      <p className="text-xs text-blue-950 dark:text-amber-100 mt-1">
         {expertise}
       </p>
     </div>
@@ -318,8 +276,8 @@ const TestimonialCard = ({ quote, author }: TestimonialCardProps) => (
     className="bg-amber-100 dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700"
   >
     <Quote className="text-amber-400 rotate-180 mb-2" size={24} />
-    <p className="italic text-blue-950 dark:text-amber-50 mb-4">{quote}</p>
-    <p className="font-medium text-blue-950 dark:text-amber-50 text-right">
+    <p className="italic text-blue-950 dark:text-amber-100 mb-4">{quote}</p>
+    <p className="font-medium text-blue-950 dark:text-amber-100 text-right">
       — {author}
     </p>
   </motion.div>

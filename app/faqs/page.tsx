@@ -64,16 +64,18 @@ interface FaqItemProps {
 // Individual FAQ item component
 const FaqItem: FC<FaqItemProps> = ({ item, isOpen, onClick }) => {
   return (
-    <div className="border-b border-gray-200 dark:border-gray-700 py-6">
+    <div className="border-b border-blue-950 dark:border-amber-100 py-6">
       <button
         className="w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 dark:text-gray-100 focus:outline-none"
         onClick={onClick}
       >
-        <span>{item.question}</span>
+        <span className="text-blue-950 dark:text-amber-100">
+          {item.question}
+        </span>
         {isOpen ? (
-          <ChevronUp className="h-6 w-6 text-indigo-500" />
+          <ChevronUp className="h-6 w-6 text-blue-950 dark:text-amber-100" />
         ) : (
-          <ChevronDown className="h-6 w-6 text-gray-500" />
+          <ChevronDown className="h-6 w-6 text-blue-950 dark:text-amber-100" />
         )}
       </button>
       <div
@@ -81,7 +83,7 @@ const FaqItem: FC<FaqItemProps> = ({ item, isOpen, onClick }) => {
           isOpen ? "max-h-screen mt-4" : "max-h-0"
         }`}
       >
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-blue-950 dark:text-amber-100 leading-relaxed">
           {item.answer}
         </p>
       </div>
@@ -100,42 +102,18 @@ const FaqPage: FC = () => {
 
   return (
     <div className="min-h-screen font-sans pointer-events-auto">
-      {/* <div className="absolute inset-0 -z-10 w-full h-full">
-        <BgComponent />
-      </div> */}
-      {/* Animated Background Shapes */}
-      <motion.div
-        className="absolute top-52 left-72 w-10 h-10 bg-amber-400 rounded-lg"
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      <motion.svg
-        viewBox="0 0 100 100"
-        className="absolute top-60 right-12 w-8 h-8 fill-amber-400"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-      >
-        <polygon points="50,15 100,100 0,100" />
-      </motion.svg>
-
-      <motion.div
-        className="absolute bottom-20 left-[60%] w-5 h-5 bg-yellow-500 rotate-45"
-        animate={{ y: [0, 20, 0] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      />
       <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-amber-600 to-amber-900 leading-tight">
               Frequently Asked Questions
             </h1>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+            <p className="mt-4 text-lg text-blue-950 dark:text-amber-100">
               Can't find the answer you're looking for? Feel free to{" "}
               <a
-                href="#"
-                className="font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+                href="/contact"
+                className="font-medium text-blue-800 dark:text-amber-400 hover:underline"
               >
                 contact our support team
               </a>
@@ -144,7 +122,7 @@ const FaqPage: FC = () => {
           </div>
 
           {/* FAQ Accordion Section */}
-          <div className="bg-amber-100 dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8">
+          <div className="bg-amber-100 dark:bg-blue-950 rounded-2xl shadow-lg p-6 sm:p-8">
             {faqData.map((item, index) => (
               <FaqItem
                 key={index}
@@ -159,7 +137,7 @@ const FaqPage: FC = () => {
           <div className="text-center mt-12">
             <a
               href="/services"
-              className="inline-block bg-amber-400 text-blue-950 px-6 py-3 rounded-md text-lg font-semibold hover:bg-amber-500 transition-transform transform hover:-translate-y-1"
+              className="inline-block bg-amber-400 text-blue-950 px-6 py-3 rounded-md text-lg font-semibold hover:text-amber-100 hover:bg-amber-500 transition-transform transform hover:-translate-y-1"
             >
               Learn More About Our Services
             </a>

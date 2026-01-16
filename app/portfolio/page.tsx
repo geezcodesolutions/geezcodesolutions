@@ -6,21 +6,20 @@ import portfolios from "./portfolio.json";
 export default function PortfolioListPage() {
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pointer-events-auto">
-      {/* <div className="absolute inset-0 -z-10 w-full h-full">
-        <BgComponent />
-      </div> */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 mb-4">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-amber-600 to-amber-900 mb-4">
           Our Creative Works
         </h1>
-        <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+        <p className="text-lg text-blue-950 dark:text-amber-100 max-w-2xl mx-auto">
           Explore our collection of innovative projects and creative solutions
         </p>
       </div>
 
       {portfolios.length === 0 ? (
         <div className="text-center py-20">
-          <p className="text-gray-400 text-xl">No projects found.</p>
+          <p className="text-blue-950 dark:text-amber-100 text-7xl font-black">
+            No projects found.
+          </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -29,7 +28,7 @@ export default function PortfolioListPage() {
               key={item.id}
               className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-amber-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-amber-600/20 to-amber-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
 
               <Link href={`/portfolio/${item.id}`}>
                 <div className="relative h-64 overflow-hidden">
@@ -45,10 +44,10 @@ export default function PortfolioListPage() {
                 </div>
 
                 <div className="p-6 bg-gray-800/80 backdrop-blur-sm relative z-20">
-                  <h2 className="text-2xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-amber-400">
+                  <h2 className="text-2xl font-bold text-amber-100 mb-2 transition-colors duration-300 group-hover:text-amber-400">
                     {item.title}
                   </h2>
-                  <p className="text-gray-400 line-clamp-2 group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-amber-100 line-clamp-2 group-hover:text-amber-100 transition-colors duration-300">
                     {item.description}
                   </p>
                   <div className="mt-4 flex items-center text-amber-400 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">

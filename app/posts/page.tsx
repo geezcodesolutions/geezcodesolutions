@@ -16,18 +16,18 @@ export default async function Posts() {
       </div> */}
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 mb-6 tracking-tight">
+          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-amber-600 to-amber-900 mb-6 tracking-tight">
             Our Latest Stories
           </h1>
-          <p className="text-xl text-blue-950 dark:text-amber-50 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-950 dark:text-amber-100 max-w-2xl mx-auto">
             Discover insightful articles and creative content from our community
           </p>
         </div>
 
         {posts.length === 0 ? (
           <div className="text-center py-20">
-            <div className="inline-block p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
-              <p className="text-2xl text-blue-950 dark:text-amber-50 mb-6">
+            <div className="inline-block p-8 bg-amber-100/50 dark:bg-blue-950/50 rounded-2xl shadow-lg">
+              <p className="text-7xl text-blue-950 dark:text-amber-100 font-black mb-6">
                 No posts yet. Be the first to create one!
               </p>
             </div>
@@ -37,10 +37,10 @@ export default async function Posts() {
             {posts.map((post) => (
               <div
                 key={post.id}
-                className="group relative bg-amber-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-amber-100 dark:border-gray-700"
+                className="group relative bg-amber-100 dark:bg-blue-950 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-amber-100 dark:border-blue-950"
               >
                 {/* Hover Overlay Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-amber-500/30 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
 
                 <Link
                   href={`/posts/${post.id}`}
@@ -62,7 +62,7 @@ export default async function Posts() {
                   {/* Content Container */}
                   <div className="p-6 relative z-20 flex flex-col flex-grow">
                     {/* Meta Data */}
-                    <div className="flex items-center text-xs font-medium text-gray-500 dark:text-gray-400 mb-4 space-x-4">
+                    <div className="flex items-center text-xs font-medium text-blue-950 dark:text-amber-100 mb-4 space-x-4">
                       <div className="flex items-center gap-1">
                         <User className="w-3 h-3 text-amber-500" />
                         <span>{post.author?.name || "Anonymous"}</span>
@@ -78,13 +78,13 @@ export default async function Posts() {
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-xl font-bold text-blue-950 dark:text-amber-50 mb-3 transition-colors duration-300 group-hover:text-amber-600 dark:group-hover:text-amber-400 line-clamp-2">
+                    <h2 className="text-xl font-bold text-blue-950 dark:text-amber-100 mb-3 transition-colors duration-300 group-hover:text-amber-600 dark:group-hover:text-amber-400 line-clamp-2">
                       {post.title}
                     </h2>
 
                     {/* Excerpt */}
                     {post.excerpt && (
-                      <p className="text-gray-600 dark:text-gray-300 line-clamp-3 mb-6 flex-grow text-sm leading-relaxed">
+                      <p className="text-blue-950 dark:text-amber-100 line-clamp-3 mb-6 flex-grow text-sm leading-relaxed">
                         {post.excerpt}
                       </p>
                     )}

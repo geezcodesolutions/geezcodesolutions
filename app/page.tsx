@@ -3,13 +3,10 @@ import Hero from "./components/Hero";
 import { motion } from "framer-motion";
 import { Code2, Smartphone, Settings } from "lucide-react";
 import ServiceCard from "./components/ServiceCard";
-import FounderCard from "./components/FounderCard";
 import TestimonialCard from "./components/Testimonials";
 import Reveal from "./components/Reveal";
+import Portfolio from "./components/portfolio";
 // import BgComponent from "@/app/components/BgComponent";
-const Abeni = "/images/abeni.png";
-// const Rediet = "/images/rediet.jpg";
-const Biniam = "/images/biniam.jpg";
 
 const content = {
   home: {
@@ -24,32 +21,17 @@ const content = {
 export default function Home() {
   const t = content.home;
 
-  const founders = [
-    {
-      name: "Abenezer Dadi",
-      role: "CEO & Co-Founder",
-      bio: "Tech enthusiast with 10+ years of experience in software development.",
-      image: Abeni,
-    },
-    {
-      name: "Biniam Amanuel",
-      role: "COO & Co-Founder",
-      bio: "Front-end developer crafting digital experiences with code. specialize in the React ecosystem and have a keen eye for UI/UX.",
-      image: Biniam,
-    },
-  ];
-
   const testimonials = [
     {
       quote:
         "This company delivered beyond our expectations. Highly recommended!",
       author: "George Constantine",
-      company: "Constantine Africa Foundation",
+      company: "Founder of Constantine Africa Foundation",
     },
     {
-      quote: "Their mobile app transformed our business operations completely.",
-      author: "Zakarias Tesfaye",
-      company: "Ahadu Market",
+      quote: "They transformed our spiritual artifacts to the digital world.",
+      author: "Eminance Daniel",
+      company: "Greek Orthodox Church Bishop",
     },
   ];
 
@@ -70,7 +52,7 @@ export default function Home() {
             <h1 className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 md:text-6xl py-5 font-bold mb-4">
               {t.title.en}
             </h1>
-            <p className="text-lg text-shadow-blue-950 dark:text-amber-50 md:text-xl mb-8">
+            <p className="text-lg text-blue-950 dark:text-amber-100 md:text-xl mb-8">
               {t.subtitle.en}
             </p>
             <button
@@ -79,6 +61,7 @@ export default function Home() {
             >
               {t.cta.en}
             </button>
+            <Portfolio />
           </motion.section>
 
           <motion.section
@@ -112,24 +95,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="max-w-6xl mx-auto py-12"
           >
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Meet Our Founders
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {founders.map((founder, index) => (
-                <FounderCard key={index} founder={founder} />
-              ))}
-            </div>
-          </motion.section>
-
-          <motion.section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="max-w-6xl mx-auto py-12"
-          >
-            <h2 className="text-3xl font-bold text-center mb-12">
+            <h2 className="text-3xl font-bold text-center text-blue-950 dark:text-amber-100 mb-12">
               What Our Clients Say
             </h2>
             <div className="grid md:grid-cols-2 gap-8">

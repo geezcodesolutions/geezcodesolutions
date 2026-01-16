@@ -104,7 +104,7 @@
     "technologies": [
       "Flutter",
       "Dart",
-      "Firebase",      
+      "Firebase",
       "SQLite / Local DB",
       "REST API",
       "Firebase Notifications"

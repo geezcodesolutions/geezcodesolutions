@@ -55,17 +55,12 @@ export default async function PortfolioDetail({ params }: PageProps) {
 
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 pointer-events-auto relative">
-      {/* Background Component Wrapper */}
-      {/* <div className="absolute inset-0 -z-10 w-full h-full">
-        <BgComponent />
-      </div> */}
-
       <div className="max-w-7xl mx-auto">
         {/* Navigation */}
         <Button asChild variant="ghost" className="mb-4">
           <Link
             href="/portfolio"
-            className="flex items-center text-primary dark:text-gold hover:text-primary dark:hover:text-gold mb-8 transition-colors"
+            className="flex items-center text-blue-300 dark:text-amber-200 hover:text-blue-500 dark:hover:text-amber-300 mb-8 transition-colors"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Portfolio
@@ -74,7 +69,7 @@ export default async function PortfolioDetail({ params }: PageProps) {
 
         {/* Meta Header */}
         <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 text-blue-300 dark:text-amber-200">
             <Calendar className="h-4 w-4" />
             <span>
               {createdAt
@@ -91,10 +86,10 @@ export default async function PortfolioDetail({ params }: PageProps) {
 
         {/* Title Section */}
         <div className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary dark:text-gold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-950 dark:text-amber-100 mb-4">
             {title}
           </h1>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-primary dark:text-gray-400 text-sm md:text-base">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-blue-300 dark:text-amber-200 text-sm md:text-base">
             {client && <span>Client: {client}</span>}
             {year && <span>Year: {year}</span>}
             {role && <span>Role: {role}</span>}
@@ -106,7 +101,7 @@ export default async function PortfolioDetail({ params }: PageProps) {
           {/* Left Column: Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Main Image */}
-            <div className="rounded-xl overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-800">
+            <div className="rounded-xl overflow-hidden shadow-lg bg-amber-100 dark:bg-blue-950">
               <Image
                 // Fallback to placeholder if imageUrl is missing
                 src={imageUrl || "https://via.placeholder.com/800x450"}
@@ -120,60 +115,63 @@ export default async function PortfolioDetail({ params }: PageProps) {
 
             {/* Overview */}
             <div className="prose dark:prose-invert max-w-none">
-              <h2 className="text-2xl font-bold text-primary dark:text-gold mb-4">
+              <h2 className="text-2xl font-bold text-blue-950 dark:text-amber-100 mb-4">
                 📄 Project Overview
               </h2>
-              <p className="text-lg text-primary dark:text-gold mb-6">
+              <p className="text-lg text-blue-950 dark:text-amber-100 mb-6">
                 {description}
               </p>
 
               {/* HTML Content */}
-              {content && (
-                <>
-                  <h2 className="text-2xl font-bold text-primary dark:text-gold mb-4">
-                    Details
-                  </h2>
-                  <div dangerouslySetInnerHTML={{ __html: content }} />
-                </>
-              )}
+              {/*{content && (
+                <>*/}
+              <h2 className="text-2xl font-bold text-blue-950 dark:text-amber-100 mb-4">
+                Details
+              </h2>
+              {/*<div dangerouslySetInnerHTML={{ __html: content }} />*/}
+              <p className="text-lg text-blue-950 dark:text-amber-100 mb-6">
+                {content}
+              </p>
+              {/*</>
+              )}*/}
             </div>
 
             {/* Deployment Section */}
-            {development && (
-              <div className="prose dark:prose-invert max-w-none">
-                <h2 className="text-2xl font-bold text-primary dark:text-gold mb-4">
-                  🚀 Deployment:
-                </h2>
-                <p className="text-lg text-primary dark:text-gold mb-6">
-                  {development}
-                </p>
-              </div>
-            )}
+            {/*{development && (*/}
+            <div className="prose dark:prose-invert max-w-none">
+              <h2 className="text-2xl font-bold text-blue-950 dark:text-amber-100 mb-4">
+                🚀 Deployment:
+              </h2>
+              <p className="text-lg text-blue-950 dark:text-amber-100 mb-6">
+                {development}
+              </p>
+            </div>
+            {/*)}*/}
 
             {/* UI/UX Section */}
-            {ui_ux_strategy && (
-              <div className="prose dark:prose-invert max-w-none">
-                <h2 className="text-2xl font-bold text-primary dark:text-gold mb-4">
-                  🎨 UI/UX Strategy:
-                </h2>
-                <p className="text-lg text-primary dark:text-gold mb-6">
-                  {ui_ux_strategy}
-                </p>
-              </div>
-            )}
+            {/*{ui_ux_strategy && (*/}
+            <div className="prose dark:prose-invert max-w-none">
+              <h2 className="text-2xl font-bold text-blue-950 dark:text-amber-100 mb-4">
+                🎨 UI/UX Strategy:
+              </h2>
+              <p className="text-lg text-blue-950 dark:text-amber-100 mb-6">
+                {ui_ux_strategy}
+              </p>
+            </div>
+            {/*)}*/}
           </div>
 
           {/* Right Column: Sidebar Info */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 sticky top-32 border border-gray-100 dark:border-gray-700">
-              <h3 className="text-xl font-bold text-primary dark:text-gold mb-6 border-b pb-2 border-gray-200 dark:border-gray-700">
+            <div className="bg-amber-100 dark:bg-blue-950 rounded-xl shadow-md p-6 sticky top-32 border border-gray-100 dark:border-gray-700">
+              <h3 className="text-xl font-bold text-blue-950 dark:text-amber-100 mb-6 border-b pb-2 border-gray-200 dark:border-gray-700">
                 Project Info
               </h3>
 
               {/* Technologies */}
               {technologies && (
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
+                  <h4 className="text-sm font-semibold text-blue-800 dark:text-amber-200 uppercase tracking-wider mb-3">
                     Technologies
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -181,7 +179,7 @@ export default async function PortfolioDetail({ params }: PageProps) {
                     {technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-sm px-3 py-1 rounded-full border border-amber-200 dark:border-amber-800"
+                        className="bg-blue-200 dark:bg-amber-200 text-blue-950 dark:text-amber-900 text-sm px-3 py-1 rounded-full border border-bluen-800 dark:border-amber-800"
                       >
                         {tech.trim()}
                       </span>
@@ -193,14 +191,14 @@ export default async function PortfolioDetail({ params }: PageProps) {
               {/* Live Link */}
               {url && (
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+                  <h4 className="text-sm font-semibold text-blue-800 dark:text-amber-200 uppercase tracking-wider mb-2">
                     Live Preview
                   </h4>
                   <Link
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center font-medium text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 transition-colors"
+                    className="inline-flex items-center font-medium text-blue-950 dark:text-amber-400 hover:text-blue-600 dark:hover:text-amber-300 transition-colors"
                   >
                     Visit Project
                     <span className="ml-1">→</span>
@@ -212,28 +210,30 @@ export default async function PortfolioDetail({ params }: PageProps) {
               <div className="space-y-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                 {client && (
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    <h4 className="text-sm font-semibold text-blue-800 dark:text-amber-200 uppercase tracking-wider">
                       Client
                     </h4>
-                    <p className="text-primary dark:text-gold">{client}</p>
+                    <p className="text-blue-950 dark:text-amber-100">
+                      {client}
+                    </p>
                   </div>
                 )}
 
                 {year && (
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    <h4 className="text-sm font-semibold text-blue-800 dark:text-amber-200 uppercase tracking-wider">
                       Year
                     </h4>
-                    <p className="text-primary dark:text-gold">{year}</p>
+                    <p className="text-blue-950 dark:text-amber-100">{year}</p>
                   </div>
                 )}
 
                 {role && (
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    <h4 className="text-sm font-semibold text-blue-800 dark:text-amber-200 uppercase tracking-wider">
                       Role
                     </h4>
-                    <p className="text-primary dark:text-gold">{role}</p>
+                    <p className="text-blue-950 dark:text-amber-100">{role}</p>
                   </div>
                 )}
               </div>

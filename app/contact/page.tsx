@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState, ChangeEvent, FormEvent } from "react";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 // import BgComponent from "@/app/components/BgComponent";
 
-const containerStyle = { width: "100%", height: "100%" };
 const center = { lat: 8.998725581975584, lng: 38.786995177708754 };
 
 type FormData = { name: string; email: string; message: string };
@@ -18,41 +16,35 @@ export default function Contact() {
     message: "",
   });
 
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
-  });
+  // Using an iframe embed instead of the @react-google-maps/api loader
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+    const { name, email, message } = form;
 
-      if (res.ok) {
-        alert("Message sent successfully!");
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        alert("Failed to send message.");
-      }
-    } catch {
-      alert("Server error.");
+    const subject = `Website contact from ${name || "Website Visitor"}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+    const mailto = `mailto:geezcodesolutions@gmail.com?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+
+    // Open user's default mail client with prefilled message
+    if (typeof window !== "undefined") {
+      window.location.href = mailto;
     }
+
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
     <div className="min-h-screen px-6 md:px-16 py-12  text-gray-800 dark:text-white pointer-events-auto">
-      {/* <div className="absolute inset-0 -z-10 w-full h-full">
-        <BgComponent />
-      </div> */}
       <motion.h1
         className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 text-4xl py-6 font-bold text-center "
         initial={{ opacity: 0, y: 40 }}
@@ -63,7 +55,7 @@ export default function Contact() {
       </motion.h1>
 
       <motion.p
-        className="text-center mt-2 mb-12 text-gray-600 dark:text-gray-300"
+        className="text-center mt-2 mb-12 text-blue-950 dark:text-amber-100"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
@@ -80,27 +72,45 @@ export default function Contact() {
         >
           <div className="flex items-center gap-4">
             <Mail className="text-amber-400" />
-            <span>info@geezcodesolutions.com</span>
+            <span className="text-blue-950 dark:text-amber-100">
+              geezcodesolutions@gmail.com
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <Mail className="text-amber-400" />
+            <span className="text-blue-950 dark:text-amber-100">
+              info@geezcodesolutions.com
+            </span>
           </div>
           <div className="flex items-center gap-4">
             <Phone className="text-amber-400" />
-            <span>+251 954 196 049</span>
+            <span className="text-blue-950 dark:text-amber-100">
+              +251 954 196 049
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <Phone className="text-amber-400" />
+            <span className="text-blue-950 dark:text-amber-100">
+              +251 946 304 619
+            </span>
           </div>
           <div className="flex items-center gap-4">
             <MapPin className="text-amber-400" />
-            <span>Bole, Addis Ababa, Ethiopia</span>
+            <span className="text-blue-950 dark:text-amber-100">
+              Bole, Addis Ababa, Ethiopia
+            </span>
           </div>
 
-          <div className="h-64 rounded-md overflow-hidden border border-gray-300 dark:border-gray-700">
-            {isLoaded && (
-              <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={center}
-                zoom={14}
-              >
-                <Marker position={center} />
-              </GoogleMap>
-            )}
+          <div className="h-64 rounded-md overflow-hidden border border-amber-100 dark:border-blue-950">
+            <iframe
+              title="GeezCode Solutions location"
+              width="100%"
+              height="100%"
+              className="border-0"
+              loading="lazy"
+              allowFullScreen
+              src={`https://maps.google.com/maps?q=${center.lat},${center.lng}&z=15&output=embed`}
+            ></iframe>
           </div>
         </motion.div>
 
@@ -112,44 +122,50 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
         >
           <div>
-            <label className="block mb-1 font-semibold">Your Name</label>
+            <label className="block mb-1 font-semibold text-blue-950 dark:text-amber-100">
+              Your Name
+            </label>
             <input
               name="name"
               type="text"
               value={form.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-text-amber-400"
+              className="w-full px-4 py-2 rounded-md bg-amber-100 dark:bg-blue-950 text-blue-950 dark:text-amber-100 border border-amber-100 dark:border-blue-950 focus:outline-none focus:ring-2 focus:ring-amber-text-amber-400"
             />
           </div>
 
           <div>
-            <label className="block mb-1 font-semibold">Your Email</label>
+            <label className="block mb-1 font-semibold text-blue-950 dark:text-amber-100">
+              Your Email
+            </label>
             <input
               name="email"
               type="email"
               value={form.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-text-amber-400"
+              className="w-full px-4 py-2 rounded-md bg-amber-100 dark:bg-blue-950 text-blue-950 dark:text-amber-100 border border-amber-100 dark:border-blue-950 focus:outline-none focus:ring-2 focus:ring-amber-text-amber-400"
             />
           </div>
 
           <div>
-            <label className="block mb-1 font-semibold">Your Message</label>
+            <label className="block mb-1 font-semibold text-blue-950 dark:text-amber-100">
+              Your Message
+            </label>
             <textarea
               name="message"
               value={form.message}
               onChange={handleChange}
               rows={5}
               required
-              className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-text-amber-400"
+              className="w-full px-4 py-2 rounded-md bg-amber-100 dark:bg-blue-950 text-blue-950 dark:text-amber-100 border border-amber-100 dark:border-blue-950 focus:outline-none focus:ring-2 focus:ring-amber-text-amber-400"
             />
           </div>
 
           <button
             type="submit"
-            className="inline-flex items-center gap-2 border-2 dark:text-amber-400 hover:text-white hover:bg-yellow-600 px-6 py-2 rounded-full transition"
+            className="inline-flex items-center gap-2 border-2 text-blue-950 dark:text-amber-900 dark:hover:bg-amber-100 hover:text-blue-950 hover:bg-blue-200 px-6 py-2 rounded-full transition"
           >
             <Send size={18} />
             Send Message
