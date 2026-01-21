@@ -19,7 +19,7 @@ export default function Contact() {
   // Using an iframe embed instead of the @react-google-maps/api loader
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -32,7 +32,7 @@ export default function Contact() {
     const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
 
     const mailto = `mailto:geezcodesolutions@gmail.com?subject=${encodeURIComponent(
-      subject,
+      subject
     )}&body=${encodeURIComponent(body)}`;
 
     // Open user's default mail client with prefilled message
@@ -50,6 +50,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        suppressHydrationWarning={true}
       >
         Contact Us
       </motion.h1>
@@ -59,6 +60,7 @@ export default function Contact() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
+        suppressHydrationWarning={true}
       >
         We’d love to hear from you. Send us a message.
       </motion.p>
@@ -68,7 +70,8 @@ export default function Contact() {
           className="space-y-4"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          suppressHydrationWarning={true}
         >
           <div className="flex items-center gap-4">
             <Mail className="text-amber-400" />
@@ -120,6 +123,7 @@ export default function Contact() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          suppressHydrationWarning={true}
         >
           <div>
             <label className="block mb-1 font-semibold text-blue-950 dark:text-amber-100">

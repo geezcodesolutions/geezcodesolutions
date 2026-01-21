@@ -23,8 +23,8 @@ const mockVacancies = [
     experience: "3+ years of experience in sales or related field",
     description:
       "We are looking for a skilled Sales Person to join our team...\n- Identify and develop new business opportunities\n- Build and maintain strong relationships with clients\n- Meet and exceed sales targets",
-    deadline: new Date(new Date().setDate(new Date().getDate() + 30)),
-    createdAt: new Date(),
+    deadline: new Date("2025-02-21"), // Fixed date
+    createdAt: new Date("2025-01-21"), // Fixed date
   },
   // {
   //   id: "2",
@@ -34,8 +34,8 @@ const mockVacancies = [
   //   experience: "5+ years in product management, preferably in a SaaS company",
   //   description:
   //     "As a Product Manager, you will be responsible for the product planning and execution throughout the Product Lifecycle...\n- Define the product vision, roadmap and growth opportunities\n- Work closely with engineering, sales, marketing, and support teams",
-  //   deadline: new Date(new Date().setDate(new Date().getDate() + 45)),
-  //   createdAt: new Date(),
+  //   deadline: new Date("2025-03-07"), // Fixed date
+  //   createdAt: new Date("2025-01-21"), // Fixed date
   // },
 ];
 
@@ -133,7 +133,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
   const [success, setSuccess] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target as HTMLInputElement | HTMLTextAreaElement;
     setFormData({ ...formData, [name]: value });

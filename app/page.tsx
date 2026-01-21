@@ -48,6 +48,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-7xl mx-auto"
+            suppressHydrationWarning={true}
           >
             <h1 className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 md:text-6xl py-5 font-bold mb-4">
               {t.title.en}
@@ -70,6 +71,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8"
+            suppressHydrationWarning={true}
           >
             <ServiceCard
               icon={<Code2 size={40} className="text-gold" />}
@@ -94,6 +96,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="max-w-6xl mx-auto py-12"
+            suppressHydrationWarning={true}
           >
             <h2 className="text-3xl font-bold text-center text-blue-950 dark:text-amber-100 mb-12">
               What Our Clients Say

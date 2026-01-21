@@ -18,6 +18,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="relative z-10 text-5xl md:text-6xl font-bold text-white mb-6"
+          suppressHydrationWarning={true}
         >
           Welcome to <span className="text-blue-600">GeezCode Solutions</span>
         </motion.h1>
@@ -27,6 +28,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="relative z-10 text-lg text-gray-300 max-w-xl mx-auto mb-8"
+          suppressHydrationWarning={true}
         >
           Empowering your digital journey with cutting-edge tech and elegant
           solutions.
@@ -37,6 +39,7 @@ export default function Hero() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3 }}
           className="relative z-10"
+          suppressHydrationWarning={true}
         >
           <Link
             href="/contact"

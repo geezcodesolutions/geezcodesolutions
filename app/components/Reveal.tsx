@@ -44,6 +44,7 @@ export default function Reveal({
       initial="hidden"
       animate={controls}
       variants={variants}
+      suppressHydrationWarning={true}
     >
       {children}
     </motion.div>
