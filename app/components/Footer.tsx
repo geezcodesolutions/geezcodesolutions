@@ -30,7 +30,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white pt-10 pb-16 -mb-52 z-20">
+    <footer className="bg-gray-900 text-blue-100 pt-10 pb-16 -mb-52 z-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-8 md:gap-4">
           {/* Quick Links */}
@@ -41,7 +41,7 @@ const Footer = () => {
                 <li key={idx} className="mb-2">
                   <a
                     href={link.path}
-                    className="hover:text-yellow-400 transition-colors duration-200"
+                    className="hover:text-blue-400 transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -56,21 +56,21 @@ const Footer = () => {
             <div className="flex gap-4 mb-4">
               <a
                 href="https://linkedin.com"
-                className="hover:text-blue-400"
+                className="hover:text-blue-900"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={24} />
               </a>
               <a
                 href="https://twitter.com"
-                className="hover:text-blue-300"
+                className="hover:text-blue-500"
                 aria-label="Twitter"
               >
                 <FaTwitter size={24} />
               </a>
               <a
                 href="https://facebook.com"
-                className="hover:text-blue-600"
+                className="hover:text-blue-700"
                 aria-label="Facebook"
               >
                 <FaFacebook size={24} />
@@ -87,7 +87,7 @@ const Footer = () => {
               <li>
                 <a
                   href="mailto:info@geezcodesolutions.com"
-                  className="flex items-center gap-2 hover:text-yellow-400"
+                  className="flex items-center gap-2 hover:text-blue-400"
                 >
                   <FaEnvelope /> info@geezcodesolutions.com
                 </a>
@@ -95,7 +95,7 @@ const Footer = () => {
               <li>
                 <a
                   href="mailto:geezcodesolutions@gmail.com"
-                  className="flex items-center gap-2 hover:text-yellow-400"
+                  className="flex items-center gap-2 hover:text-blue-400"
                 >
                   <FaEnvelope /> geezcodesolutions@gmail.com
                 </a>
@@ -103,7 +103,7 @@ const Footer = () => {
               {/* <li>
                 <a
                   href="https://www.geezcodesolutions.com"
-                  className="flex items-center gap-2 hover:text-yellow-400"
+                  className="flex items-center gap-2 hover:text-blue-400"
                 >
                   <FaGlobe /> www.geezcodesolutions.com
                 </a>
@@ -111,7 +111,7 @@ const Footer = () => {
               <li>
                 <a
                   href="tel:+251799160326"
-                  className="flex items-center gap-2 hover:text-yellow-400"
+                  className="flex items-center gap-2 hover:text-blue-400"
                 >
                   <FaPhoneAlt /> +251 799 160 326
                 </a>
@@ -119,7 +119,7 @@ const Footer = () => {
               <li>
                 <a
                   href="tel:+2519541966049"
-                  className="flex items-center gap-2 hover:text-yellow-400"
+                  className="flex items-center gap-2 hover:text-blue-400"
                 >
                   <FaPhoneAlt /> +251 954 196 049
                 </a>
@@ -127,7 +127,7 @@ const Footer = () => {
               <li>
                 <a
                   href="tel:+251946304619"
-                  className="flex items-center gap-2 hover:text-yellow-400"
+                  className="flex items-center gap-2 hover:text-blue-400"
                 >
                   <FaPhoneAlt /> +251 946 304 619
                 </a>
@@ -148,11 +148,11 @@ const Footer = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 flex-1"
+                className="px-4 py-2 rounded bg-gray-800 text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400 flex-1"
               />
               <button
                 type="submit"
-                className="px-6 py-2 rounded bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold transition"
+                className="px-6 py-2 rounded bg-blue-900 hover:bg-blue-950 text-blue-100 font-semibold transition"
               >
                 Subscribe
               </button>
@@ -161,10 +161,10 @@ const Footer = () => {
               <p className="text-green-600 mt-2">Thank you!</p>
             )}
             {status === "error" && (
-              <p className="text-red-600 mt-2">"Error occurred"</p>
+              <p className="text-red-600 mt-2">Error occurred</p>
             )}
             <p className="text-gray-400 text-xs mt-2">
-              ⭐ We'll never share your email with others
+              ⭐ We&apos;ll never share your email with others
             </p>
           </div>
         </div>

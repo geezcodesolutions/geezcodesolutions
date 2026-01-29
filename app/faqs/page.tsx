@@ -1,7 +1,7 @@
 "use client";
 import { useState, FC } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 // import BgComponent from "@/app/components/BgComponent";
 
 // Define the type for a single FAQ item
@@ -64,18 +64,16 @@ interface FaqItemProps {
 // Individual FAQ item component
 const FaqItem: FC<FaqItemProps> = ({ item, isOpen, onClick }) => {
   return (
-    <div className="border-b border-blue-950 dark:border-amber-100 py-6">
+    <div className="border-b border-blue-950 py-6">
       <button
         className="w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 dark:text-gray-100 focus:outline-none"
         onClick={onClick}
       >
-        <span className="text-blue-950 dark:text-amber-100">
-          {item.question}
-        </span>
+        <span className="text-blue-100">{item.question}</span>
         {isOpen ? (
-          <ChevronUp className="h-6 w-6 text-blue-950 dark:text-amber-100" />
+          <ChevronUp className="h-6 w-6 text-blue-300" />
         ) : (
-          <ChevronDown className="h-6 w-6 text-blue-950 dark:text-amber-100" />
+          <ChevronDown className="h-6 w-6 text-blue-300" />
         )}
       </button>
       <div
@@ -83,9 +81,7 @@ const FaqItem: FC<FaqItemProps> = ({ item, isOpen, onClick }) => {
           isOpen ? "max-h-screen mt-4" : "max-h-0"
         }`}
       >
-        <p className="text-blue-950 dark:text-amber-100 leading-relaxed">
-          {item.answer}
-        </p>
+        <p className="text-blue-200 leading-relaxed">{item.answer}</p>
       </div>
     </div>
   );
@@ -106,14 +102,14 @@ const FaqPage: FC = () => {
         <div className="max-w-3xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-amber-600 to-amber-900 leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-blue-100 via-blue-500 to-blue-950 leading-tight">
               Frequently Asked Questions
             </h1>
-            <p className="mt-4 text-lg text-blue-950 dark:text-amber-100">
-              Can't find the answer you're looking for? Feel free to{" "}
+            <p className="mt-4 text-lg text-blue-200">
+              Can&apos;t find the answer you&apos;re looking for? Feel free to{" "}
               <a
                 href="/contact"
-                className="font-medium text-blue-800 dark:text-amber-400 hover:underline"
+                className="font-medium text-blue-800 hover:underline"
               >
                 contact our support team
               </a>
@@ -122,7 +118,7 @@ const FaqPage: FC = () => {
           </div>
 
           {/* FAQ Accordion Section */}
-          <div className="bg-amber-100 dark:bg-blue-950 rounded-2xl shadow-lg p-6 sm:p-8">
+          <div className="bg-blue-950/50 rounded-2xl shadow-lg p-6 sm:p-8">
             {faqData.map((item, index) => (
               <FaqItem
                 key={index}
@@ -137,7 +133,7 @@ const FaqPage: FC = () => {
           <div className="text-center mt-12">
             <a
               href="/services"
-              className="inline-block bg-amber-400 text-blue-950 px-6 py-3 rounded-md text-lg font-semibold hover:text-amber-100 hover:bg-amber-500 transition-transform transform hover:-translate-y-1"
+              className="inline-block bg-blue-900 text-blue-200 px-6 py-3 rounded-md text-lg font-semibold hover:text-blue-300 hover:bg-blue-950 transition-transform transform hover:-translate-y-1"
             >
               Learn More About Our Services
             </a>

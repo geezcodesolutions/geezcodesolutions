@@ -98,7 +98,7 @@ const Services: React.FC = () => {
             className="inline-block"
           >
             <button
-              className="bg-amber-400 text-blue-950 hover:text-amber-100 hover:bg-yellow-600 px-6 py-3 rounded-lg font-medium flex items-center gap-2 mx-auto"
+              className="bg-blue-800 text-blue-100 hover:bg-blue-900 px-6 py-3 rounded-lg font-medium flex items-center gap-2 mx-auto"
               onClick={() => (window.location.href = "/contact")}
             >
               Get a free consultation
@@ -114,7 +114,7 @@ const Services: React.FC = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h2 className="text-3xl font-bold text-center text-blue-950 dark:text-amber-100 mb-12">
+          <h2 className="text-3xl font-bold text-center text-blue-100 dark:text-amber-100 mb-12">
             Technologies We Use
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -125,19 +125,19 @@ const Services: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-amber-100 dark:bg-blue-950 p-6 rounded-xl text-center border border-gray-100 dark:border-gray-700"
+                className="bg-blue-950/50 p-6 rounded-xl text-center border border-blue-500"
               >
-                <div className="flex justify-center mb-4 text-amber-400">
+                <div className="flex justify-center mb-4 text-blue-500">
                   {tech.icon}
                 </div>
-                <h4 className="font-semibold text-lg mb-3 text-blue-950 dark:text-amber-100">
+                <h4 className="font-semibold text-lg mb-3 text-blue-100">
                   {tech.name}
                 </h4>
                 <div className="flex flex-wrap justify-center gap-x-2 gap-y-2">
                   {tech.examples.map((example, i) => (
                     <span
                       key={i}
-                      className="text-xs bg-amber-200 dark:bg-blue-800 text-gray-700 dark:text-amber-100 px-2.5 py-1 rounded-full"
+                      className="text-xs bg-blue-300 text-blue-950 px-2.5 py-1 rounded-full"
                     >
                       {example}
                     </span>
@@ -153,9 +153,9 @@ const Services: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="bg-amber-100/50  dark:bg-blue-950/50 rounded-2xl p-8 max-w-6xl mx-auto"
+          className="bg-blue-950/50 rounded-2xl p-8 max-w-6xl mx-auto"
         >
-          <h2 className="text-3xl font-bold text-center mb-8 text-blue-950 dark:text-amber-100">
+          <h2 className="text-3xl font-bold text-center mb-8 text-blue-100">
             Our Development Process
           </h2>
           <div className="grid md:grid-cols-4 gap-4">
@@ -188,15 +188,15 @@ const ProcessStep: React.FC<ProcessStepProps> = ({
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true }}
-    className="bg-amber-100 dark:bg-blue-950 p-4 rounded-lg text-center"
+    className="bg-blue-950 p-4 rounded-lg text-center"
   >
-    <div className="w-10 h-10 bg-gold text-amber-400 rounded-full flex items-center justify-center font-bold mb-3 mx-auto">
+    <div className="w-10 h-10 bg-gold text-blue-500 rounded-full flex items-center justify-center font-bold mb-3 mx-auto">
       {step}
     </div>
-    <h4 className="font-bold mb-1 text-blue-950 dark:text-amber-100">
+    <h4 className="font-bold mb-1 text-blue-100 dark:text-amber-100">
       {title}
     </h4>
-    <p className="text-sm text-blue-950 dark:text-amber-100">{desc}</p>
+    <p className="text-sm text-blue-200">{desc}</p>
   </motion.div>
 );
 

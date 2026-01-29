@@ -50,14 +50,14 @@ export default function Home() {
             className="text-center max-w-7xl mx-auto"
             suppressHydrationWarning={true}
           >
-            <h1 className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 md:text-6xl py-5 font-bold mb-4">
+            <h1 className="text-4xl text-transparent bg-clip-text bg-linear-to-r from-blue-100 via-blue-500 to-blue-950 md:text-6xl py-5 font-bold mb-4">
               {t.title.en}
             </h1>
-            <p className="text-lg text-blue-950 dark:text-amber-100 md:text-xl mb-8">
+            <p className="text-lg text-blue-200 md:text-xl mb-8">
               {t.subtitle.en}
             </p>
             <button
-              className="bg-amber-400 text-blue-950 hover:text-white hover:bg-yellow-600 px-6 py-3 rounded-xl text-lg transition"
+              className="bg-blue-900 text-blue-100 hover:bg-blue-950 px-6 py-3 rounded-xl text-lg transition"
               onClick={() => (window.location.href = "/contact")}
             >
               {t.cta.en}
@@ -98,7 +98,7 @@ export default function Home() {
             className="max-w-6xl mx-auto py-12"
             suppressHydrationWarning={true}
           >
-            <h2 className="text-3xl font-bold text-center text-blue-950 dark:text-amber-100 mb-12">
+            <h2 className="text-3xl font-bold text-center text-blue-100 mb-12">
               What Our Clients Say
             </h2>
             <div className="grid md:grid-cols-2 gap-8">

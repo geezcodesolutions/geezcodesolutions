@@ -7,17 +7,17 @@ export default function PortfolioListPage() {
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pointer-events-auto">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-amber-600 to-amber-900 mb-4">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-blue-100 via-blue-500 to-blue-950 mb-4">
           Our Creative Works
         </h1>
-        <p className="text-lg text-blue-950 dark:text-amber-100 max-w-2xl mx-auto">
+        <p className="text-lg text-blue-200 max-w-2xl mx-auto">
           Explore our collection of innovative projects and creative solutions
         </p>
       </div>
 
       {portfolios.length === 0 ? (
         <div className="text-center py-20">
-          <p className="text-blue-950 dark:text-amber-100 text-7xl font-black">
+          <p className="text-blue-950 text-7xl font-black">
             No projects found.
           </p>
         </div>
@@ -28,7 +28,7 @@ export default function PortfolioListPage() {
               key={item.id}
               className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="absolute inset-0 bg-linear-to-br from-amber-600/20 to-amber-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-blue-600/20 to-blue-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
 
               <Link href={`/portfolio/${item.id}`}>
                 <div className="relative h-64 overflow-hidden">
@@ -43,14 +43,14 @@ export default function PortfolioListPage() {
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-all duration-500"></div>
                 </div>
 
-                <div className="p-6 bg-gray-800/80 backdrop-blur-sm relative z-20">
-                  <h2 className="text-2xl font-bold text-amber-100 mb-2 transition-colors duration-300 group-hover:text-amber-400">
+                <div className="p-6 bg-blue-950/80 backdrop-blur-sm relative z-20">
+                  <h2 className="text-2xl font-bold text-blue-100 mb-2 transition-colors duration-300 group-hover:text-blue-400">
                     {item.title}
                   </h2>
-                  <p className="text-amber-100 line-clamp-2 group-hover:text-amber-100 transition-colors duration-300">
+                  <p className="text-blue-200 line-clamp-2 group-hover:text-blue-200 transition-colors duration-300">
                     {item.description}
                   </p>
-                  <div className="mt-4 flex items-center text-amber-400 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  <div className="mt-4 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                     <span>View Project</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

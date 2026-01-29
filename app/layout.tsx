@@ -30,10 +30,10 @@ export default function RootLayout({
         className={`${inter.className} flex flex-col min-h-screen bg-linear-to-br from-blue-950 to-amber-400`} // Added flex utility classes
       >*/}
       <body
-        className="flex flex-col min-h-screen bg-linear-to-br from-blue-950 via-amber-500 to-blue-950" // Added flex utility classes
+        className="flex flex-col min-h-screen bg-linear-to-b from-slate-950 via-blue-950 to-blue-900" // Added flex utility classes
       >
-        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-950/70 rounded-full blur-[50px] bg-scroll" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-800/30 rounded-full blur-[50px]" />
+        <div className="absolute top-50 left-10 w-96 h-96 bg-amber-800/50 rounded-full blur-[150px] bg-scroll" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-amber-800/30 rounded-full blur-[150px]" />
         {/* BgComponent as background */}
 
         <Header />

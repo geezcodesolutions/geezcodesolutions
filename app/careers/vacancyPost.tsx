@@ -73,7 +73,7 @@ const FormField: React.FC<FormFieldProps> = ({
   readOnly = false,
 }) => (
   <div className="mb-4">
-    <label className="flex items-center text-base font-semibold text-blue-950 dark:text-amber-100 mb-2">
+    <label className="flex items-center text-base font-semibold text-blue-950 mb-2">
       {icon}
       <span className="ml-2">{label}</span>
     </label>
@@ -133,7 +133,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
   const [success, setSuccess] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target as HTMLInputElement | HTMLTextAreaElement;
     setFormData({ ...formData, [name]: value });
@@ -226,14 +226,14 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
   }
 
   return (
-    <div className="p-6 md:p-8">
+    <div className="py-24 px-6 md:py-24 md:px-6">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-amber-100">
+        <h2 className="text-2xl md:text-3xl font-bold text-blue-950">
           Job Application
         </h2>
         <button
           onClick={onClose}
-          className="text-blue-950 dark:text-amber-100 hover:text-red-500"
+          className="text-blue-950 hover:text-red-500"
           aria-label="Close application form"
         >
           <X size={24} />
@@ -242,12 +242,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
 
       <form className="space-y-4" onSubmit={handleSubmit} noValidate>
         <FormField
-          icon={
-            <Briefcase
-              className="text-blue-950 dark:text-amber-100"
-              size={18}
-            />
-          }
+          icon={<Briefcase className="text-blue-950" size={18} />}
           label="Position Applying For"
           name="position"
           value={formData.position}
@@ -257,9 +252,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
         />
 
         <FormField
-          icon={
-            <User className="text-blue-950 dark:text-amber-100" size={18} />
-          }
+          icon={<User className="text-blue-950" size={18} />}
           label="Full Name"
           name="fullName"
           value={formData.fullName}
@@ -268,9 +261,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
         />
 
         <FormField
-          icon={
-            <Mail className="text-blue-950 dark:text-amber-100" size={18} />
-          }
+          icon={<Mail className="text-blue-950" size={18} />}
           label="Email"
           name="email"
           type="email"
@@ -280,9 +271,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
         />
 
         <FormField
-          icon={
-            <Phone className="text-blue-950 dark:text-amber-100" size={18} />
-          }
+          icon={<Phone className="text-blue-950" size={18} />}
           label="Phone"
           name="phone"
           value={formData.phone}
@@ -291,9 +280,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
         />
 
         <FormField
-          icon={
-            <FileText className="text-blue-950 dark:text-amber-100" size={18} />
-          }
+          icon={<FileText className="text-blue-950" size={18} />}
           label="Cover Letter (Optional)"
           name="coverLetter"
           type="textarea"
@@ -302,8 +289,8 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
         />
 
         <div className="mb-6">
-          <label className="flex gap-2 items-center text-base font-semibold text-blue-950 dark:text-amber-100 mb-2">
-            <FileText className="text-blue-950 dark:text-amber-100" size={18} />
+          <label className="flex gap-2 items-center text-base font-semibold text-blue-950 mb-2">
+            <FileText className="text-blue-950" size={18} />
             Upload Resume (PDF, DOC)
           </label>
           <div className="relative">
@@ -338,7 +325,7 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({
           type="submit"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full py-3 px-6 bg-blue-950 text-amber-400 dark:text-blue-950 dark:bg-amber-400 font-bold rounded-full hover:bg-blue-800 dark:hover:bg-amber-300 dark:hover:text-amber-900 hover:text-amber-100 transition-all duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
+          className="w-full py-3 px-6 bg-blue-950 text-blue-400 dark:text-blue-950 dark:bg-blue-400 font-bold rounded-full hover:bg-blue-800 dark:hover:bg-blue-300 dark:hover:text-blue-900 hover:text-blue-100 transition-all duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
@@ -390,7 +377,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-amber-100/50 dark:bg-blue-950/50 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-blue-100/50 dark:bg-blue-950/50 flex items-center justify-center z-50 p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -398,7 +385,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({
           style={{ backdropFilter: "blur(10px)" }}
         >
           <motion.div
-            className="bg-amber-100 dark:bg-blue-950 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+            className="bg-blue-100 dark:bg-blue-950 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 50, opacity: 0 }}
@@ -496,10 +483,10 @@ export default function VacancyPost() {
             d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <h1 className="text-2xl font-semibold text-blue-950 dark:text-amber-100 mb-2">
+        <h1 className="text-2xl font-semibold text-blue-950 mb-2">
           No Vacancies Available
         </h1>
-        <p className="text-blue-950 dark:text-amber-100 max-w-md">
+        <p className="text-blue-950 max-w-md">
           We&apos;re not hiring at the moment, but we&apos;re always growing 🌱.
           Check back later or follow us on social media to stay updated!
         </p>
@@ -515,9 +502,9 @@ export default function VacancyPost() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="max-w-4xl mx-auto p-6 bg-amber-100 dark:bg-gray-800 shadow-lg rounded-2xl space-y-6 border border-gray-200"
+          className="max-w-4xl mx-auto p-6 bg-blue-300 shadow-lg rounded-2xl space-y-6 border border-blue-200"
         >
-          <h1 className="text-2xl md:text-3xl font-bold text-blue-950 dark:text-amber-100 mb-4">
+          <h1 className="text-2xl md:text-3xl font-bold text-blue-950 mb-4">
             {vacancy.title}
           </h1>
 
@@ -525,46 +512,32 @@ export default function VacancyPost() {
             <div className="flex items-start gap-3">
               <Briefcase className="text-blue-600 mt-1" />
               <div>
-                <p className="font-semibold text-blue-950 dark:text-amber-100">
-                  Position
-                </p>
-                <p className="text-blue-950 dark:text-amber-100">
-                  {vacancy.position}
-                </p>
+                <p className="font-semibold text-blue-950">Position</p>
+                <p className="text-blue-950">{vacancy.position}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <GraduationCap className="text-green-600 mt-1" />
               <div>
-                <p className="font-semibold text-blue-950 dark:text-amber-100">
-                  Qualification
-                </p>
-                <p className="text-blue-950 dark:text-amber-100">
-                  {vacancy.qualification}
-                </p>
+                <p className="font-semibold text-blue-950">Qualification</p>
+                <p className="text-blue-950">{vacancy.qualification}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <Briefcase className="text-orange-600 mt-1" />
               <div>
-                <p className="font-semibold text-blue-950 dark:text-amber-100">
-                  Experience
-                </p>
-                <p className="text-blue-950 dark:text-amber-100">
-                  {vacancy.experience}
-                </p>
+                <p className="font-semibold text-blue-950">Experience</p>
+                <p className="text-blue-950">{vacancy.experience}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <CalendarDays className="text-red-600 mt-1" />
               <div>
-                <p className="font-semibold text-blue-950 dark:text-amber-100">
-                  Deadline
-                </p>
-                <p className="text-blue-950 dark:text-amber-100">
+                <p className="font-semibold text-blue-950">Deadline</p>
+                <p className="text-blue-950">
                   {vacancy.deadline
                     ? new Date(vacancy.deadline).toLocaleDateString("en-US", {
                         year: "numeric",
@@ -578,10 +551,10 @@ export default function VacancyPost() {
           </div>
 
           <div className="text-gray-800 mt-4">
-            <h2 className="text-xl font-semibold mb-2 text-blue-950 dark:text-amber-100">
+            <h2 className="text-xl font-semibold mb-2 text-blue-950">
               Job Description
             </h2>
-            <p className="whitespace-pre-line leading-relaxed text-blue-950 dark:text-amber-100">
+            <p className="whitespace-pre-line leading-relaxed text-blue-950">
               {vacancy.description}
             </p>
           </div>
@@ -591,7 +564,7 @@ export default function VacancyPost() {
               onClick={() => handleOpenModal(vacancy)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="py-2 px-6 bg-amber-400 text-blue-950 hover:text-amber-100 hover:bg-yellow-600 font-bold rounded-full transition-all duration-300"
+              className="py-2 px-6 bg-blue-400 text-blue-950 hover:text-blue-100 hover:bg-blue-600 font-bold rounded-full transition-all duration-300"
             >
               Apply Now
             </motion.button>

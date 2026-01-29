@@ -19,7 +19,7 @@ export default function Contact() {
   // Using an iframe embed instead of the @react-google-maps/api loader
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -32,7 +32,7 @@ export default function Contact() {
     const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
 
     const mailto = `mailto:geezcodesolutions@gmail.com?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(body)}`;
 
     // Open user's default mail client with prefilled message
@@ -44,9 +44,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen px-6 md:px-16 py-12  text-gray-800 dark:text-white pointer-events-auto">
+    <div className="min-h-screen px-6 md:px-16 py-12  text-gray-800  pointer-events-auto">
       <motion.h1
-        className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700 text-4xl py-6 font-bold text-center "
+        className="text-transparent bg-clip-text bg-linear-to-r from-blue-100 via-blue-500 to-blue-950 text-4xl py-6 font-bold text-center "
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -56,13 +56,13 @@ export default function Contact() {
       </motion.h1>
 
       <motion.p
-        className="text-center mt-2 mb-12 text-blue-950 dark:text-amber-100"
+        className="text-center mt-2 mb-12 text-blue-200"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
         suppressHydrationWarning={true}
       >
-        We’d love to hear from you. Send us a message.
+        We&apos;d love to hear from you. Send us a message.
       </motion.p>
 
       <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
@@ -74,37 +74,27 @@ export default function Contact() {
           suppressHydrationWarning={true}
         >
           <div className="flex items-center gap-4">
-            <Mail className="text-amber-400" />
-            <span className="text-blue-950 dark:text-amber-100">
-              geezcodesolutions@gmail.com
-            </span>
+            <Mail className="text-blue-500" />
+            <span className="text-blue-100 ">geezcodesolutions@gmail.com</span>
           </div>
           <div className="flex items-center gap-4">
-            <Mail className="text-amber-400" />
-            <span className="text-blue-950 dark:text-amber-100">
-              info@geezcodesolutions.com
-            </span>
+            <Mail className="text-blue-500" />
+            <span className="text-blue-100 ">info@geezcodesolutions.com</span>
           </div>
           <div className="flex items-center gap-4">
-            <Phone className="text-amber-400" />
-            <span className="text-blue-950 dark:text-amber-100">
-              +251 954 196 049
-            </span>
+            <Phone className="text-blue-500" />
+            <span className="text-blue-100 ">+251 954 196 049</span>
           </div>
           <div className="flex items-center gap-4">
-            <Phone className="text-amber-400" />
-            <span className="text-blue-950 dark:text-amber-100">
-              +251 946 304 619
-            </span>
+            <Phone className="text-blue-500" />
+            <span className="text-blue-100 ">+251 946 304 619</span>
           </div>
           <div className="flex items-center gap-4">
-            <MapPin className="text-amber-400" />
-            <span className="text-blue-950 dark:text-amber-100">
-              Bole, Addis Ababa, Ethiopia
-            </span>
+            <MapPin className="text-blue-500" />
+            <span className="text-blue-100">Bole, Addis Ababa, Ethiopia</span>
           </div>
 
-          <div className="h-64 rounded-md overflow-hidden border border-amber-100 dark:border-blue-950">
+          <div className="h-64 rounded-md overflow-hidden border border-blue-100">
             <iframe
               title="GeezCode Solutions location"
               width="100%"
@@ -126,7 +116,7 @@ export default function Contact() {
           suppressHydrationWarning={true}
         >
           <div>
-            <label className="block mb-1 font-semibold text-blue-950 dark:text-amber-100">
+            <label className="block mb-1 font-semibold text-blue-100">
               Your Name
             </label>
             <input
@@ -135,12 +125,12 @@ export default function Contact() {
               value={form.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 rounded-md bg-amber-100 dark:bg-blue-950 text-blue-950 dark:text-amber-100 border border-amber-100 dark:border-blue-950 focus:outline-none focus:ring-2 focus:ring-amber-text-amber-400"
+              className="w-full px-4 py-2 rounded-md bg-blue-100 text-blue-500 border border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-text-blue-500"
             />
           </div>
 
           <div>
-            <label className="block mb-1 font-semibold text-blue-950 dark:text-amber-100">
+            <label className="block mb-1 font-semibold text-blue-100">
               Your Email
             </label>
             <input
@@ -149,12 +139,12 @@ export default function Contact() {
               value={form.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 rounded-md bg-amber-100 dark:bg-blue-950 text-blue-950 dark:text-amber-100 border border-amber-100 dark:border-blue-950 focus:outline-none focus:ring-2 focus:ring-amber-text-amber-400"
+              className="w-full px-4 py-2 rounded-md bg-blue-100 text-blue-500 border border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-text-blue-400"
             />
           </div>
 
           <div>
-            <label className="block mb-1 font-semibold text-blue-950 dark:text-amber-100">
+            <label className="block mb-1 font-semibold text-blue-100">
               Your Message
             </label>
             <textarea
@@ -163,13 +153,13 @@ export default function Contact() {
               onChange={handleChange}
               rows={5}
               required
-              className="w-full px-4 py-2 rounded-md bg-amber-100 dark:bg-blue-950 text-blue-950 dark:text-amber-100 border border-amber-100 dark:border-blue-950 focus:outline-none focus:ring-2 focus:ring-amber-text-amber-400"
+              className="w-full px-4 py-2 rounded-md bg-blue-100 text-blue-500 border border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-text-blue-400"
             />
           </div>
 
           <button
             type="submit"
-            className="inline-flex items-center gap-2 border-2 text-blue-950 dark:text-amber-900 dark:hover:bg-amber-100 hover:text-blue-950 hover:bg-blue-200 px-6 py-2 rounded-full transition"
+            className="inline-flex items-center gap-2 border-2 border-blue-300 hover:border-blue-600 text-blue-100 -100 hover:text-blue-950 hover:bg-blue-200 px-6 py-2 rounded-full transition"
           >
             <Send size={18} />
             Send Message

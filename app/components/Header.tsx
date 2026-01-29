@@ -43,10 +43,8 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-md font-medium transition-colors hover:text-amber-400 ${
-                pathname === item.href
-                  ? "text-amber-400"
-                  : "text-blue-950 dark:text-amber-50"
+              className={`text-md font-medium transition-colors hover:text-blue-300 ${
+                pathname === item.href ? "text-blue-300" : "text-blue-100"
               }`}
             >
               {item.name}
@@ -55,7 +53,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="md:hidden text-blue-950 dark:text-amber-50"
+          className="md:hidden text-blue-300"
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -64,16 +62,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden px-4 pb-4 space-y-2 bg-white/90 dark:bg-blue-950/30 backdrop-blur-3xl shadow">
+        <div className="md:hidden px-4 pb-4 space-y-2 bg-blue-950/30 backdrop-blur-3xl shadow">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               onClick={() => setOpen(false)}
-              className={`block text-md font-medium transition-colors hover:text-amber-400 ${
-                pathname === item.href
-                  ? "text-amber-400"
-                  : "text-blue-950 dark:text-amber-50"
+              className={`block text-md font-medium transition-colors hover:text-blue-300 ${
+                pathname === item.href ? "text-blue-300" : "text-blue-100"
               }`}
             >
               {item.name}

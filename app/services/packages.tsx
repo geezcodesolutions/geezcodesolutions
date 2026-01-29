@@ -158,14 +158,14 @@ const ProductPackages = () => {
     <div className="min-h-screen font-sans py-16 px-4 sm:px-6 lg:px-8">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-base font-semibold text-amber-900 tracking-widest uppercase mb-2">
+        <h2 className="text-base font-semibold text-blue-300 tracking-widest uppercase mb-2">
           Pricing & Plans
         </h2>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950 dark:text-amber-100 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold bg-clip-text bg-linear-to-r from-blue-100 via-blue-500 to-blue-950 text-transparent mb-6">
           Choose the perfect package <br className="hidden md:block" />
           for your growth.
         </h1>
-        <p className="max-w-2xl mx-auto text-xl text-blue-950 dark:text-amber-100 mb-10">
+        <p className="max-w-2xl mx-auto text-xl text-blue-200 mb-10">
           Transparent pricing. No hidden fees. Upgrade or cancel anytime.
         </p>
 
@@ -179,8 +179,8 @@ const ProductPackages = () => {
               className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 text-sm md:text-base
                 ${
                   activeCategory === key
-                    ? "bg-blue-950 text-amber-100 shadow-lg scale-105"
-                    : "bg-amber-100 text-blue-950 hover:bg-blue-950/50 hover:text-amber-100 border border-amber-200"
+                    ? "bg-blue-950 text-blue-100 shadow-lg scale-105"
+                    : "bg-blue-100 text-blue-950 hover:bg-blue-950/50 hover:text-blue-100 border border-blue-100"
                 }
               `}
             >
@@ -195,10 +195,10 @@ const ProductPackages = () => {
       <div className="max-w-6xl mx-auto">
         {/* Category Description */}
         <div className="text-center mb-10 animate-fade-in">
-          <h3 className="text-2xl font-bold text-amber-100 dark:text-blue-950">
+          <h3 className="text-2xl font-bold text-blue-100">
             {PACKAGES_DATA[activeCategory].title}
           </h3>
-          <p className="text-amber-100 dark:text-blue-950 mt-2">
+          <p className="text-blue-200 mt-2">
             {PACKAGES_DATA[activeCategory].subtitle}
           </p>
         </div>
@@ -208,17 +208,17 @@ const ProductPackages = () => {
           {PACKAGES_DATA[activeCategory].tiers.map((tier) => (
             <div
               key={tier.id}
-              className={`relative flex flex-col bg-amber-100 rounded-2xl transition-all duration-300
+              className={`relative flex flex-col bg-blue-100 rounded-2xl transition-all duration-300
                 ${
                   tier.highlight
-                    ? "shadow-2xl ring-2 ring-amber-400 md:-mt-4 z-10"
+                    ? "shadow-2xl ring-2 ring-blue-400 md:-mt-4 z-10"
                     : "shadow-lg border border-slate-100 hover:shadow-xl"
                 }
               `}
             >
               {/* Top Badge for Premium */}
               {tier.highlight && (
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-amber-100 text-xs font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1 uppercase tracking-wider whitespace-nowrap">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-blue-100 text-xs font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1 uppercase tracking-wider whitespace-nowrap">
                   <Star size={12} fill="currentColor" /> Recommended for Scale
                 </div>
               )}
@@ -229,7 +229,7 @@ const ProductPackages = () => {
                   {tier.name}
                 </h3>
                 <div className="flex items-center gap-2 mt-2">
-                  <div className="h-1 w-10 bg-amber-500 rounded-full"></div>
+                  <div className="h-1 w-10 bg-blue-500 rounded-full"></div>
                   <p className="text-blue-950/70 text-sm font-medium">
                     {tier.idealFor}
                   </p>
@@ -252,7 +252,7 @@ const ProductPackages = () => {
               </div>
 
               {/* Divider */}
-              <div className="w-full h-px bg-amber-100"></div>
+              <div className="w-full h-px bg-blue-100"></div>
 
               {/* Features List */}
               <div className="p-8 flex-1">
@@ -261,12 +261,12 @@ const ProductPackages = () => {
                     <li key={index} className="flex items-start">
                       <div
                         className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5
-                        ${tier.highlight ? "bg-amber-200" : "bg-blue-200"}`}
+                        ${tier.highlight ? "bg-blue-200" : "bg-blue-200"}`}
                       >
                         <Check
                           size={14}
                           className={
-                            tier.highlight ? "text-amber-600" : "text-blue-950"
+                            tier.highlight ? "text-blue-600" : "text-blue-950"
                           }
                           strokeWidth={3}
                         />
@@ -287,7 +287,7 @@ const ProductPackages = () => {
                       ${
                         tier.highlight
                           ? "bg-blue-950 text-blue-100 hover:bg-blue-800 shadow-lg hover:shadow-xl"
-                          : "bg-amber-500 text-amber-100 hover:bg-amber-400 border border-amber-100"
+                          : "bg-blue-500 text-blue-100 hover:bg-blue-400 border border-blue-100"
                       }
                     `}
                   >
@@ -305,18 +305,18 @@ const ProductPackages = () => {
       </div>
 
       {/* Trust/Footer Section */}
-      <div className="mt-20 text-center border-t border-amber-400 pt-10 max-w-4xl mx-auto">
-        <p className="text-sm text-amber-950 font-medium uppercase tracking-widest mb-6">
+      <div className="mt-20 text-center border-t border-blue-400 pt-10 max-w-4xl mx-auto">
+        <p className="text-sm text-blue-950 font-medium uppercase tracking-widest mb-6">
           Supporting Businesses Across Ethiopia
         </p>
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 opacity-60">
-          <span className="px-4 py-2 bg-amber-200 border border-amber-800 rounded-lg text-sm font-semibold text-amber-950">
+          <span className="px-4 py-2 bg-blue-200 border border-blue-800 rounded-lg text-sm font-semibold text-blue-950">
             Telebirr Integration
           </span>
-          <span className="px-4 py-2 bg-amber-200 border border-amber-800 rounded-lg text-sm font-semibold text-amber-950">
+          <span className="px-4 py-2 bg-blue-200 border border-blue-800 rounded-lg text-sm font-semibold text-blue-950">
             Multi Language Support
           </span>
-          <span className="px-4 py-2 bg-amber-200 border border-amber-800 rounded-lg text-sm font-semibold text-amber-950">
+          <span className="px-4 py-2 bg-blue-200 border border-blue-800 rounded-lg text-sm font-semibold text-blue-950">
             Local Hosting
           </span>
         </div>

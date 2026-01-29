@@ -65,7 +65,7 @@ export default async function PostPage({ params }: PageProps) {
         <Button asChild variant="ghost" className="mb-8">
           <Link
             href="/posts"
-            className="flex items-center text-blue-300 hover:text-blue-500 dark:text-amber-600 dark:hover:text-amber-700 transition-colors"
+            className="flex items-center hover:bg-transparent text-blue-300 hover:text-blue-500 transition-colors"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to all posts
@@ -78,7 +78,7 @@ export default async function PostPage({ params }: PageProps) {
             {"published" in post && post.published ? (
               <Badge
                 variant="secondary"
-                className="bg-blue-100 bg-green-900/30 text-green-400 border-0"
+                className="bg-green-900/30 text-green-400 border-0"
               >
                 Published
               </Badge>
@@ -87,26 +87,26 @@ export default async function PostPage({ params }: PageProps) {
                 Draft
               </Badge>
             )}
-            <span className="text-sm text-blue-950 dark:text-amber-100 flex items-center gap-1">
+            <span className="text-sm text-blue-300 flex items-center gap-1">
               <Clock className="w-3 h-3" /> {estimatedReadTime}
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-blue-950 dark:text-amber-100 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-blue-200 leading-tight">
             {post.title}
           </h1>
 
-          <div className="flex items-center justify-center space-x-4 text-sm text-muted-foregroun border-y border-amber-950 border-border/40 py-4 w-fit mx-auto px-8">
+          <div className="flex items-center justify-center space-x-4 text-sm text-muted-foregroun border-y border-blue-500 py-4 w-fit mx-auto px-8">
             <div className="flex items-center gap-2">
-              <User className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-              <span className="font-medium text-foreground text-blue-950 dark:text-amber-100">
+              <User className="h-4 w-4 text-blue-500" />
+              <span className="font-medium text-blue-100">
                 {post.author?.name || "Anonymous"}
               </span>
             </div>
             <span className="text-blue-300">|</span>
             <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-              <span className="text-blue-950 dark:text-amber-100">
+              <Calendar className="h-4 w-4 text-blue-600" />
+              <span className="text-blue-100">
                 {new Date(post.createdAt).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -136,8 +136,8 @@ export default async function PostPage({ params }: PageProps) {
             <div
               className="prose prose-lg dark:prose-invert max-w-none
               prose-headings:text-primary dark:prose-headings:text-gold
-              prose-a:text-amber-600 dark:prose-a:text-amber-400
-              prose-img:rounded-xl prose-img:shadow-md text-blue-950 dark:text-amber-100"
+              prose-a:text-blue-600 dark:prose-a:text-blue-400
+              prose-img:rounded-xl prose-img:shadow-md text-blue-200"
             >
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {post.content || "No content available."}
@@ -149,42 +149,40 @@ export default async function PostPage({ params }: PageProps) {
           <div className="lg:col-span-4">
             <div className="sticky top-24 space-y-6">
               {/* Author Card */}
-              <div className="bg-amber-100 dark:bg-blue-950 rounded-xl p-6 shadow-sm border border-blue-950 dark:border-amber-100 border-border/50">
-                <h3 className="font-bold text-lg mb-4 text-blue-950 dark:text-amber-100">
+              <div className="bg-blue-950/50 rounded-xl p-6 shadow-sm border border-blue-500">
+                <h3 className="font-bold text-lg mb-4 text-blue-200 ">
                   About the Author
                 </h3>
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-blue-300/50 dark:bg-amber-400/50 flex items-center justify-center text-blue-950 dark:text-amber-900 font-bold text-xl">
+                  <div className="h-12 w-12 rounded-full bg-blue-300 flex items-center justify-center text-blue-950 font-bold text-xl">
                     {post.author?.name?.charAt(0) || "A"}
                   </div>
                   <div>
-                    <p className="font-medium text-foreground text-blue-950 dark:text-amber-100">
+                    <p className="font-medium text-blue-200 ">
                       {post.author?.name || "Unknown Author"}
                     </p>
-                    <p className="text-xs text-muted-foreground text-blue-950 dark:text-amber-100">
-                      Content Creator
-                    </p>
+                    <p className="text-xs text-blue-300 ">Content Creator</p>
                   </div>
                 </div>
               </div>
 
               {/* Share/Action Card (Placeholder) */}
-              <div className="bg-amber-100 dark:bg-blue-950 rounded-xl p-6 shadow-sm border border-blue-950 dark:border-amber-100 border-border/50">
-                <h3 className="font-bold text-lg mb-4 text-blue-950 dark:text-amber-100 flex items-center gap-2">
-                  <Share2 className="w-4 h-4 text-amber-500" /> Share
+              <div className="bg-blue-950/50 rounded-xl p-6 shadow-sm border border-blue-500">
+                <h3 className="font-bold text-lg mb-4 text-blue-200  flex items-center gap-2">
+                  <Share2 className="w-4 h-4 text-blue-500" /> Share
                 </h3>
                 <div className="flex gap-2">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full text-blue-950 dark:text-amber-100"
+                    className="w-full text-blue-100 hover:text-blue-100 bg-blue-900 hover:bg-blue-950 border-blue-500"
                   >
                     Twitter
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full text-blue-950 dark:text-amber-100"
+                    className="w-full text-blue-100 hover:text-blue-100 bg-blue-900 hover:bg-blue-950 border-blue-500"
                   >
                     LinkedIn
                   </Button>
