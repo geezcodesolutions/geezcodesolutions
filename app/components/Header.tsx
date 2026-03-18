@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-const logo = "/images/black.png"; // Update with your logo path
+const logo = "/images/t1.png"; // Update with your logo path
 
 const navItems = [
   { name: "Home", href: "/" },

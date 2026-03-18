@@ -38,7 +38,17 @@ const About = () => {
     },
     {
       name: "Abenezer Dadi",
-      role: "Tech Lead",
+      role: "Project Manager",
+      expertise: "Project Management",
+    },
+    {
+      name: "Biniam Amanuel",
+      role: "UI/UX Designer",
+      expertise: "Design",
+    },
+    {
+      name: "Nahom Teklu",
+      role: "Software Engineer",
       expertise: "Development",
     },
   ];

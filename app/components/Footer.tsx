@@ -30,7 +30,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-blue-100 pt-10 pb-16 -mb-52 z-20">
+    <footer className="bg-linear-to-t from-slate-950 to-blue-950 text-blue-100 pt-10 pb-16 -mb-52 z-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-8 md:gap-4">
           {/* Quick Links */}
